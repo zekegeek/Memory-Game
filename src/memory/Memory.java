@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author geojson
+ * @author Catherine Roebuck and Charlotte Cook
  */
 public class Memory {
 
@@ -23,14 +23,11 @@ public class Memory {
            + "another turn. This continues until all the matches are found.\n"
            + "Player One goes first."
            + "Good Luck!!!\n\n";
-    double matches;
-    String location;
     
     public static void main(String[] args) {
         Memory myGame = new Memory();
         myGame.getName();
         myGame.displayHelp();
-        myGame.getNumOfMatches();
         // TODO code application logic here
     }
     //Prompt player to enter their name
@@ -43,17 +40,5 @@ public class Memory {
     public void displayHelp(){
         System.out.println("\nWelcome " + this.name + "\n");
         System.out.println(this.instructions);
-    }
-    //Prompt player to select the number of matches in the game
-    public void getNumOfMatches(){
-        Scanner input = new Scanner(System.in);
-        System.out.println("How many matches do you want in this game (5-20): ");
-        //this.matches = input.next() 
-        //  - error saying string cannot be converted to double
-        //  - need to lean what to use instead of "next" for double
-    }
-    //Mixes cards and places cards in specific configuration
-    public void cardLocation(){
-        //emplty for now
     }
 }
