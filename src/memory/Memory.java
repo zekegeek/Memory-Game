@@ -27,6 +27,10 @@ public class Memory {
     String location;
     
     public static void main(String[] args) {
+        Memory myGame = new Memory();
+        myGame.getName();
+        myGame.displayHelp();
+        myGame.getNumOfMatches();
         // TODO code application logic here
     }
     //Prompt player to enter their name
