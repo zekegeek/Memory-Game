@@ -6,26 +6,39 @@
 
 package memory;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Charlotte Cook
  */
 public class PlayerTurn {
-    private SelectCard choice;
-    public void turn(){
-        String card1 = choice.location();
-        String card2 = choice.location();
+    int numOfMatches = 0;
+    String card1;
+    String card2;
+        
+    public int turn(){
+         
         showCards();
         checkMatch();
         //if checkMatch(true){
         //run removeCards function
+        //count numOfMathes
         //player gets another turn}
-            
-       
-                
+        
+        return numOfMatches;
+    }
+    public void getCards(){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the card's location: ");
+        this.card1 = input.next();
+        
+        System.out.println("Enter the second card's location: ");
+        this.card2 = input.next();
     }
     private void showCards(){
-        //reveal cards
+        //retrieve cards from createBoard
+        //reveal/return cards
     }
     private void checkMatch(){
         //check for a match
