@@ -13,7 +13,10 @@ package memory;
 public class Menu {
     boolean active;
     
+    public Menu() {
+    }
+    
     void isActive() {
-        System.out.println("The menu is" + active);
+        System.out.println("\n\tThe menu is" + active);
     }
 }
