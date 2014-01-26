@@ -28,6 +28,9 @@ public class Memory {
         Memory myGame = new Memory();
         myGame.getName();
         myGame.displayHelp();
+        SelectCard card = new SelectCard();
+        String card1 = card.location();
+        
         // TODO code application logic here
     }
     //Prompt player to enter their name
