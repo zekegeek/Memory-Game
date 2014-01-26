@@ -30,6 +30,7 @@ public class Memory {
         myGame.displayHelp();
         SelectCard card = new SelectCard();
         String card1 = card.location();
+        System.out.println(card1);
         
         // TODO code application logic here
     }
