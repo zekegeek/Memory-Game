@@ -26,10 +26,12 @@ public class Memory {
     
     public static void main(String[] args) {
         Memory myGame = new Memory();
-        myGame.getName();
+        myGame.getName() ;
         myGame.displayHelp();
         SelectCard card = new SelectCard();
         String card1 = card.location();
+        
+        System.out.println(card1);
         
         // TODO code application logic here
     }
