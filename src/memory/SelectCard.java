@@ -14,7 +14,11 @@ package memory;
  */
 public class SelectCard {
     public boolean location(byte vertical, char horizontal){
-        char[] validValues = {'A', 'B', 'C','D', 'E', 'a', 'b', 'c', 'd', 'e', 'f'};
+        char[] validValues = {'A', 'B', 'C','D', 'E', 'F', 'a', 'b', 'c', 'd', 'e', 'f'};
+        //char card;
+        vertical=3;
+        horizontal='f';
+        char card = (char)((char) vertical+horizontal);
         if (vertical < 1 || vertical > 6){
           System.out.println("That is not a valid number."
                   + "\nPlease enter a value between 1 and 6.");
@@ -28,6 +32,8 @@ public class SelectCard {
             System.out.println("That is an invalid value."
                 + "\nPlease enter a letter between A and F.");
             return false;        }
+        
+        //return card;
     }
 }
 
