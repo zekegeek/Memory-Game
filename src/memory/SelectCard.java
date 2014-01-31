@@ -29,5 +29,9 @@ public class SelectCard {
                 + "\nPlease enter a letter between A and F.");
             return false;        }
     }
+    
+char card;
+-        card = (char)((char) vert+horiz);
+-        //return card;
 }
 
