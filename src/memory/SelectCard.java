@@ -13,25 +13,21 @@ package memory;
  * Cook 1/30/14 translated algorithm to Java
  */
 public class SelectCard {
-    public void location(){
-        char horiz = 'I';
-        byte vert = 3;//will be user input later
-        if (vert<1 || vert>6){
+    public boolean location(byte vertical, char horizontal){
+        char[] validValues = {'A', 'B', 'C','D', 'E', 'a', 'b', 'c', 'd', 'e', 'f'};
+        if (vertical < 1 || vertical > 6){
           System.out.println("That is not a valid number."
                   + "\nPlease enter a value between 1 and 6.");
+          return false;
         }
         else{
-            horiz = 'A';//will be user input later
-            if (horiz!='A'){
-            //and 'B','C','D','E','F','G','H','a','b','c','d','e','f','g','h'){
-            //when we learn how to do that    
-                System.out.println("That is an invalid value."
-                        + "\nPlease enter a letter between A and H.");
+            for(int i = 0; i < validValues.length; i++)
+            {
+                if(validValues[i] == horizontal) return true;
             }
-        }
-        char card;
-        card = (char)((char) vert+horiz);
-        //return card;
+            System.out.println("That is an invalid value."
+                + "\nPlease enter a letter between A and F.");
+            return false;        }
     }
 }
 

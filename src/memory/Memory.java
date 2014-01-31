@@ -25,6 +25,9 @@ public class Memory {
            + "Good Luck!!!\n\n";
     
     public static void main(String[] args) {
+        SelectCard sc = new SelectCard();
+        boolean locationIsValid = sc.location((byte)6, 'F');
+        System.out.println(locationIsValid);
         Memory myGame = new Memory();
         myGame.getName() ;
         myGame.displayHelp();
