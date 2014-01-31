@@ -35,5 +35,9 @@ public class SelectCard {
         
         //return card;
     }
+    
+char card;
+-        card = (char)((char) vert+horiz);
+-        //return card;
 }
 
