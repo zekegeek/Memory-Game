@@ -18,7 +18,7 @@ public class SelectCard {
         //char card;
         vertical=3;
         horizontal='f';
-        char card = (char)((char) vertical+horizontal);
+        char fullCard = (char)((char) vertical+horizontal);
         if (vertical < 1 || vertical > 6){
           System.out.println("That is not a valid number."
                   + "\nPlease enter a value between 1 and 6.");
