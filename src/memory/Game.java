@@ -13,15 +13,54 @@ import java.util.Scanner;
  * @author Sony Style
  */
 public class Game {
+    boolean match;
     char card1;
     char card2;
     public void takeTurns(){
         byte score1=0;
         byte score2=0;
-        int totalScore=score1+score2;
+        int totalScore=(int)((int)score1+score2);
+        //this might have to turn into a switch statment in order to give the 
+        //player another turn.
         while (totalScore<18){
-            
+            System.out.println("Player1's Turn");
+            card1 = selectCard();
+            card2 = selectCard();
+            match = checkMatch();
+            if (match==true){
+                score1++;
+                if (totalScore==18){
+                    break;
+                }
+                //else{give player1 another turn
+                //start from the println}
+            }
+            System.out.println("Player2's Turn");
+            card1 = selectCard();
+            card2 = selectCard();
+            match = checkMatch();
+            if (match==true){
+                score1++;
+                if (totalScore==18){
+                    break;
+                }
+                //else{give player2 another turn
+                //start from the println}
+            }    
         }
+        if(score1>score2){
+            System.out.println("Game Over.\nPlayer1 Wins!");
+            //two buttons: Play Again, Main Menu
+        }
+        else if(score1<score2){
+            System.out.println("Game Over.\nPlayer2 Wins!");
+            //two buttons: Play Again, Main Menu
+        }
+        else{
+            System.out.println("Game Over.\nIt's a Tie!");
+            //two buttons: Play Again, Main Menu
+        }
+    }
     
     
     private char selectCard(){
@@ -50,8 +89,7 @@ public class Game {
     private boolean checkMatch(){
          
         showCards();
-        checkMatch();
-        //if checkMatch(true){
+         //if checkMatch(true){
         //run removeCards function
         return true;
     }
