@@ -31,6 +31,10 @@ public class Memory {
         Memory myGame = new Memory();
         myGame.getName() ;
         myGame.displayHelp();
+        
+        Game start = new Game();
+        start.takeTurns();
+        
         /*
         *SelectCard card = new SelectCard();
         *String card1 = card.location();

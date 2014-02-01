@@ -67,7 +67,7 @@ public class Game {
         
         char[] validValues = {'A', 'B', 'C','D', 'E', 'F', 'a', 'b', 'c', 'd', 'e', 'f'};
         byte vertical=3;
-        char horizontal='f';
+        char horizontal='A';
         
         if (vertical < 1 || vertical > 6){
           System.out.println("That is not a valid number."
@@ -78,7 +78,7 @@ public class Game {
             {
                 if(validValues[i] != horizontal){ 
                     System.out.println("That is an invalid value."
-                            + "\nPlease enter a letter between A and F.");
+                            + "\nPlease enter a letter between A and F.");                    
                 }
             }
         }
