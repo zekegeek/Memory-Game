@@ -16,17 +16,26 @@ public class PlayerTurn {
     int numOfMatches = 0;
     String card1;
     String card2;
+    
+    public void takeTurns(){
+        byte score1=0;
+        byte score2=0;
+        int totalScore=score1+score2;
+        while (totalScore<18){
+            
+        }
+    
+    
+    
+    }
         
-    public int turn(){
+    public boolean checkMatch(){
          
         showCards();
         checkMatch();
         //if checkMatch(true){
         //run removeCards function
-        //count numOfMathes
-        //player gets another turn}
-        
-        return numOfMatches;
+        return true;
     }
     public void getCards(){
         Scanner input = new Scanner(System.in);
@@ -40,10 +49,7 @@ public class PlayerTurn {
         //retrieve cards from createBoard
         //reveal/return cards
     }
-    private void checkMatch(){
-        //check for a match
-        //return true or false
-    }
+    
     private void removeCards(){
         //remove the two selected cards
     }

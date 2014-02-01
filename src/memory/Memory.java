@@ -36,9 +36,13 @@ public class Memory {
         *String card1 = card.location();
         *System.out.println(card1);
         */
-        PlayerTurn turn1 = new PlayerTurn();
-        int score = turn1.turn();
-        System.out.println(score);
+        
+        
+        //PlayerTurn turn1 = new PlayerTurn();
+        //int score = turn1.turn();
+        //System.out.println(score);
+        
+        
         
         // TODO code application logic here
     }

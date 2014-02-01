@@ -10,7 +10,7 @@ package memory;
  *@author 
  * Charlotte Cook 1/21/14 Created class
  * Cook and Roebuck 1/29/14 created problem, matrix and algorithm
- * Cook 1/30/14 translated algorithm to Java
+ * 1/30/14 translated algorithm to Java
  */
 public class SelectCard {
     public boolean location(byte vertical, char horizontal){
