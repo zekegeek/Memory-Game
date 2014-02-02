@@ -10,16 +10,44 @@ package memory;
  *
  * @author geojson
  */
+import java.util.Scanner;
 public class Board {
-    int columnCount = 4;
-    int rowCount = 4;
+    Scanner in = new Scanner(System.in);
+    public int columnCount = 4;
+    public int rowCount = 4;
     
  public Board() {
     }
     
- public void displaySize() {
-        System.out.println("\n\tThe board is " + this.rowCount + " by " 
-                           + this.columnCount + " in size.");  
+ public void createBoard() {
+      System.out.println("Please enter the number of columns you would like, "
+              + "between 1 and 12.");
+     columnCount= in.nextInt();
+     if(columnCount!= >0 && <13){
+ System.out.println("Please input a number 1-12");
+    columnCount= in.nextInt();
+     System.out.println("\"Please enter the number of rows you would like, " +
+"              + \"between 1 and 12.\"");
+     rowCount= in.nextInt();
+        if(rowCount!= >0 && <13){
+ System.out.println("Please input a number 1-12");
+    rowCount= in.nextInt();
+ }
+     
+     
+     int boardSize= columnCount*rowCount;
+        if(boardSize%2==1){
+            columnCount++ ;
+            boardSize=(columnCount*rowCount);
+            System.out.println(" \n \t To ensure an even number of cards so that"
+                    + "all cards have matches, the board size has been increased"
+                    + "to " + boardSize + "cards"); 
+            else {
+                   System.out.println("\n The board has " + boardSize + "cards."); 
+                    }
+        }}
+        }
+       
 }
  
 }
