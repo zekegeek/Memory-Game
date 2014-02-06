@@ -18,5 +18,6 @@ public class Menu {
     
     void isActive() {
         System.out.println("\n\tThe menu is" + active);
+        
     }
 }
