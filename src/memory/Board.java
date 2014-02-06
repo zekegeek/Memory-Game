@@ -23,29 +23,30 @@ public class Board {
       System.out.println("Please enter the number of columns you would like, "
               + "between 1 and 12.");
      columnCount= in.nextInt();
-     if(columnCount!= >0 && <13){
- System.out.println("Please input a number 1-12");
-    columnCount= in.nextInt();
-     System.out.println("\"Please enter the number of rows you would like, " +
+     if(columnCount<0 && columnCount>12){
+        System.out.println("Please input a number 1-12");
+        columnCount= in.nextInt();
+        System.out.println("\"Please enter the number of rows you would like, " +
 "              + \"between 1 and 12.\"");
-     rowCount= in.nextInt();
-        if(rowCount!= >0 && <13){
- System.out.println("Please input a number 1-12");
-    rowCount= in.nextInt();
- }
+        rowCount= in.nextInt();
+        if(rowCount<0 && rowCount>13){
+            System.out.println("Please input a number 1-12");
+            rowCount= in.nextInt();
+        }
      
      
-     int boardSize= columnCount*rowCount;
+        int boardSize= columnCount*rowCount;
         if(boardSize%2==1){
             columnCount++ ;
             boardSize=(columnCount*rowCount);
             System.out.println(" \n \t To ensure an even number of cards so that"
                     + "all cards have matches, the board size has been increased"
                     + "to " + boardSize + "cards"); 
-            else {
-                   System.out.println("\n The board has " + boardSize + "cards."); 
-                    }
-        }}
+        }
+        else {
+            System.out.println("\n The board has " + boardSize + "cards."); 
+        }
+        
         }
        
 }
