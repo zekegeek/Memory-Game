@@ -58,7 +58,7 @@ public class HelpMenuView {
                     continue;
             }
         }
-        while(!command.equals("Q"));
+        while(!command.equals("R")||!command.equals("M"));
         return;
     }
     public final void display(){
