@@ -13,7 +13,7 @@ import java.util.Scanner;
  * @author Cook
  */
 public class HelpMenuView {
-    private static String[][] menuItems = {
+    private final static String[][] menuItems = {
         {"R", "Resume Game"},
         {"M", "Quit and go to Main Menu"},
         {"A", "About Memory"},
@@ -21,7 +21,7 @@ public class HelpMenuView {
         {"H", "How to Play"}            
     };
     //create instance of the HelpMenuControl (action) class
-    private HelpMenuControl helpMenuControl = new helpMenuControl();
+    private HelpMenuControl helpMenuControl = new HelpMenuControl();
     
     public HelpMenuView(){
         
