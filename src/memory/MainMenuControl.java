@@ -16,18 +16,15 @@ public class MainMenuControl {
     
     
     public void startGame(long noPlayers) {
-    Game game;
+    Game game = null;
     
-    GameMenuView gameMenu = new GameMenuView(game);
+    GamePreferenceView gameMenu = new GamePreferenceView(game);
     gameMenu.getInput();
 }
 
-    
-public Game create(String gameType) {
-    Game game = null;
-    Player player1 = null;
-    Player player2 = null;
-    
-    if (gameType == null)
-}
+     public void displayHelpMenu() {
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.getInput();
+    }
+     
 }
