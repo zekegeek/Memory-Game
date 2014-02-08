@@ -17,9 +17,9 @@ public class GamePreferenceView {
     private final GamePreferenceControl gamePreferenceControl = new GamePreferenceControl(game);
 
     private final static String[][] menuItems = {
-        {"P", "Change the Number of Players"},
-        {"M", "Change the Number of Matches"},
-        {"D", "Change the Dimensions of the Board"},
+        {"P", "Change the Number of Players"},//needs to display current # of players
+        {"M", "Change the Number of Matches"},//needs to display current # of matches
+        {"D", "Change the Dimensions of the Board"},//Maybe give two options for each number of matches???
         {"Q", "Return to Main Menu"}
     };
     
