@@ -44,6 +44,9 @@ public class GamePreferenceView {
                 case "D":
                     this.gamePreferenceControl.getDimentions();
                     break;
+                default:
+                    System.out.println("Invalid Command. Please enter a valid command.");
+                    continue;
             }
         }while (!command.equals("Q"));
     }
