@@ -39,7 +39,7 @@ public class MainMenuView {
             
             switch (command) {
                 case "N":
-                    this.mainMenuControl.startGame();
+                    this.mainMenuControl.displayGamePreferenceMenu();
                     break;
                 case "H": 
                     this.mainMenuControl.displayHelpMenu();

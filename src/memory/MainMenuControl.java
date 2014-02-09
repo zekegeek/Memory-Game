@@ -13,15 +13,6 @@ import java.util.Scanner;
  * @author Catherine
  */
 public class MainMenuControl {
-    
-    
-    /*public void startGame(long noPlayers) {
-    Game game = null;
-    
-    GamePreferenceView gameMenu = new GamePreferenceView(game);
-    gameMenu.getInput();
-}*/
-    
     public void displayGamePreferenceMenu() {
         Game game = new Game();
         GamePreferenceView gamePreferenceMenu = new GamePreferenceView(game);
