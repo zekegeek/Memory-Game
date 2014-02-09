@@ -23,7 +23,8 @@ public class MainMenuControl {
 }*/
     
     public void displayGamePreferenceMenu() {
-        GamePreferenceView gamePreferenceMenu = new GamePreferenceMenu(this.game);
+        Game game = new Game();
+        GamePreferenceView gamePreferenceMenu = new GamePreferenceView(game);
         gamePreferenceMenu.getInput();
     }
 
@@ -31,5 +32,10 @@ public class MainMenuControl {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.getInput();
     }
+     
+     public void exit() {
+     System.out.println("Thanks for playing!");
+     System.exit(0);
+     }
      
 }
