@@ -17,6 +17,7 @@ public class GamePreferenceView {
     private final GamePreferenceControl gamePreferenceControl = new GamePreferenceControl(game);
 
     private final static String[][] menuItems = {
+        {"S", "Start Game"},
         {"P", "Change the Number of Players"},//needs to display current # of players
         {"M", "Change the Number of Matches"},//needs to display current # of matches
         {"D", "Change the Dimensions of the Board"},//Maybe give two options for each number of matches???
@@ -35,6 +36,10 @@ public class GamePreferenceView {
             command = inFile.nextLine();
             command = command.trim().toUpperCase();
             switch (command){
+                case "S":
+                    //Game newGame = new Game();
+                    new Game().newGame("Your game has started! Or will as soon as we get it coded.");
+                    break;
                 case "P":
                     this.gamePreferenceControl.getPlayers();
                     break;

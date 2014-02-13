@@ -13,7 +13,11 @@ package memory;
 public class HelpMenuControl {
     public HelpMenuControl(){
 }
-
+    public void displayMainMenu() {
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.getInput();
+    }
+    
     public void displayBoardHelp() {
         System.out.println();
         this.displayHelpBorder();

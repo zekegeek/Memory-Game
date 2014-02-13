@@ -42,7 +42,7 @@ public class HelpMenuView {
                 case "R":
                     break;
                 case "M":
-                    //this.mainMenuView.mainMenuView;
+                    this.helpMenuControl.displayMainMenu();
                     break;
                 case "A":
                     this.helpMenuControl.diplayGameHelp();

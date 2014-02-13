@@ -25,40 +25,47 @@ public class Memory {
            + "Good Luck!!!\n\n";
     
     public static void main(String[] args) {
-        SelectCard sc = new SelectCard();
-        boolean locationIsValid = sc.location((byte)6, 'F');
-        System.out.println(locationIsValid);
+    //Starts here!!    
         Memory myGame = new Memory();
         myGame.getName() ;
         myGame.displayHelp();
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.getInput();
         
-        Game start = new Game();
-        start.takeTurns();
-        
-        /*
-        *SelectCard card = new SelectCard();
-        *String card1 = card.location();
-        *System.out.println(card1);
-        */
-        
-        
-        //PlayerTurn turn1 = new PlayerTurn();
-        //int score = turn1.turn();
-        //System.out.println(score);
-        
-        
-        
-        // TODO code application logic here
-    }
+        }
+    
     //Prompt player to enter their name
     public void getName(){
         Scanner input = new Scanner(System.in);
         System.out.println("Enter your name: ");
         this.name = input.next();        
     }
+    
     //Display a welcoming message
     public void displayHelp(){
         System.out.println("\nWelcome " + this.name + "\n");
         System.out.println(this.instructions);
     }
+        
+        
+        /*Old code, not deleting yet
+        Game start = new Game();
+        start.takeTurns();
+        
+        SelectCard sc = new SelectCard();
+        boolean locationIsValid = sc.location((byte)6, 'F');
+        System.out.println(locationIsValid);
+        
+        SelectCard card = new SelectCard();
+        String card1 = card.location();
+        System.out.println(card1);
+               
+        PlayerTurn turn1 = new PlayerTurn();
+        int score = turn1.turn();
+        System.out.println(score);
+        */
+        
+        
+        // TODO code application logic here
+    
 }

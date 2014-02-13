@@ -10,9 +10,20 @@ import java.util.Scanner;
 
 /**
  *
- * @author Sony Style
+ * @author Cook
  */
 public class Game {
+   
+    public Object newGame(Object object) {
+        String message = (String) object;
+        System.out.println("\t-------------------------------------------------------------------------------");
+        System.out.println("\tNew Game: " + message);
+        System.out.println("\t-------------------------------------------------------------------------------");
+        return null;
+   
+    }
+    
+    
     boolean match;
     char card1;
     char card2;
