@@ -15,6 +15,7 @@ public class Board {
     Scanner in = new Scanner(System.in);
     public int columnCount = 4;
     public int rowCount = 4;
+    //public Location[][] boardLocations;
     
  public Board() {
     }
