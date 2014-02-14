@@ -13,6 +13,7 @@ import java.util.Scanner;
  * @author Cook
  */
 public class Game {
+    Board board;
    
     public Object newGame(Object object) {
         String message = (String) object;
@@ -120,5 +121,5 @@ public class Game {
     private void removeCards(){
         //remove the two selected cards
     }
-}
 
+}
