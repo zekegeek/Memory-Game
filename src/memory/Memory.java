@@ -26,6 +26,8 @@ public class Memory {
            + "Good Luck!!!\n\n";
     
     public static void main(String[] args) {
+//        Board b = new Board();
+//        b.displayBoard();
     //Starts here!!    
         Memory myGame = new Memory();
         myGame.getName() ;

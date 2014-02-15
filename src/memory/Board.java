@@ -51,5 +51,13 @@ public class Board {
         }
        
 }
- 
+ public void displayBoard() {
+     System.out.println("Here is your board!:");
+     for(int t=0; t<rowCount; t++){
+        for(int i=0; i<columnCount; i++) {
+            System.out.print("x\t");
+        }
+        System.out.print("\n\n");
+     }
+ }
 }
