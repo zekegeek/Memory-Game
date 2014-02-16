@@ -121,5 +121,9 @@ public class Game {
     private void removeCards(){
         //remove the two selected cards
     }
+    
+    public void createCard(){
+        
+    }
 
 }

@@ -29,7 +29,7 @@ public class Memory {
 //        Board b = new Board();
 //        b.displayBoard();
     //Starts here!!    
-        Memory myGame = new Memory();
+        Memory myGame = new Memory();     
         myGame.getName() ;
         myGame.displayHelp();
         MainMenuView mainMenu = new MainMenuView();

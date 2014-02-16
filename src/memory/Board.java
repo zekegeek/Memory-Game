@@ -60,4 +60,25 @@ public class Board {
         System.out.print("\n\n");
      }
  }
+    public void createCard(String args[]){
+        //assigning just numbers for the card faces for now
+        int cards[][] = new int [rowCount][columnCount];
+        //cat, dog, cow, moose, donkey, horse, deer, elk, mouse, mule, chicken, 
+        //turkey, emu, ostrich,  worm, snail, penguin, dragon, pig
+        
+        int card=0;
+        
+        for(int i = 0; i<rowCount; i++){
+            for(int j = 0; j<columnCount; j++){
+                cards[i][j] = card;
+                card++;
+            }
+        }
+        
+        for (int x[] : cards){
+            for(int y : x){
+                System.out.println("Card "+x+" = "+y);	
+            }
+        }    
+    }
 }
