@@ -28,6 +28,31 @@ public class Game {
     boolean match;
     char card1;
     char card2;
+    char currentPlayer, player1, player2;
+    
+    /*
+    I think the main part of the game will be inside another loop. Something
+    like: while (! winnerFound) { ... } then when you find the winner, set that 
+    boolean to true and you'll exit the loop. Then just print out the winner and
+    it will be done.
+    */
+    
+    /*
+    One way you could approach the two loops would be to have another temporary 
+    variable that holds the current player. At the beginning, currentPlayer = player1. 
+    If current player makes a match, then don't change the player. Otherwise, 
+    set currentPlayer to player2. Then just loop over that until there's no more cards.
+    */
+    
+    public void takeTurns2(){
+        byte score1=0;
+        byte score2=0;
+        int totalScore=score1+score2;
+        currentPlayer = player1;
+        
+        
+        
+    }
     public void takeTurns(){
         byte score1=0;
         byte score2=0;
@@ -74,7 +99,13 @@ public class Game {
         }
     }
     
-    
+    /*
+    Another approach would be to hold the cards in a 2d array. That would look 
+    something like Card[][] cards. Then you could access a particular Card by 
+    saying cards[row][column] where row and column are ints. It would mean you'd 
+    need to convert the horizontal char into an int, but going this way might be 
+    easier than creating a composite index of vertical+horizontal.
+    */
     private char selectCard(){
         
         char[] validValues = {'A', 'B', 'C','D', 'E', 'F', 'a', 'b', 'c', 'd', 'e', 'f'};
