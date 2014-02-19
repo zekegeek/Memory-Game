@@ -60,13 +60,29 @@ public class Board {
         System.out.print("\n\n");
      }
  }
+ 
+ 
     public void createCard(String args[]){
         //assigning just numbers for the card faces for now
-        int cards[][] = new int [rowCount][columnCount];
+        int size=rowCount*columnCount;
+        int cards[]=new int[size];
+        //int cards[][] = new int [rowCount][columnCount];
         //
-        int pairs = (rowCount*columnCount)/2;
-        String[] face= {'cat', 'dog', 'cow', 'moose', 'donkey', 'horse', 'deer', 'elk', 'mouse', 'mule', 'chicken', 'turkey', 'emu', 'ostrich',  'worm', 'snail', 'penguin', 'dragon', 'pig'};
+        int pairs = size/2;
         
+        int face[] = new int[18];
+        /*
+        face[] = { 'cat', 'dog', 'cow', 'moose', 'donkey', 'horse', 'deer',
+        'elk', 'mouse', 'mule', 'chicken', 'turkey', 'emu', 'ostrich',  'worm',
+        'snail', 'penguin', 'dragon', 'pig' };
+        */
+        for(int i=0; i<pairs; i++){
+            cards[i]=face;
+            cards[i+1]=face;
+            i++;
+            face++;
+        }
+    
         for(int i = 0; i<rowCount; i++){
             for(int j = 0; j<columnCount; j++){
                 cards[i][j] = card;
