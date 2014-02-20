@@ -89,18 +89,19 @@ public class Board {
         for(int i = 0; i<rowCount; i++){
             for(int j = 0; j<columnCount; j++){
                 boolean placed = false;
-                while(! placed)
+                while(! placed){
                     int arrayIndex = Math.Random(0, pairs);
                     if (symbols[arrayIndex]>0){
                         board[i][j] = symbols[arrayIndex];
                         symbols[arrayIndex]=-1;
                         placed = true;
                     }
-                cards[i][j] = card;
-                card++;
+                }
             }
         }
         /*
+        cards[i][j] = card;
+        card++;
         for (int x[] : cards{
             for(int y : x){
                 System.out.println("Card "+x+" = "+y);	
