@@ -10,6 +10,7 @@ package memory;
  *
  * @author geojson
  */
+
 import java.util.Scanner;
 public class Board {
     Scanner in = new Scanner(System.in);
@@ -93,7 +94,7 @@ public class Board {
                 boolean placed = false;
                 while(! placed){
                     int arrayIndex;
-                    arrayIndex = Math.Random(0, pairs);
+                    arrayIndex = Math.random(0, pairs);
                     if (symbols[arrayIndex]>0){
                         board[i][j] = symbols[arrayIndex];
                         symbols[arrayIndex]=-1;
