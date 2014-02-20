@@ -16,6 +16,8 @@ public class Board {
     public int columnCount = 4;
     public int rowCount = 4;
     //public Location[][] boardLocations;
+    private int[] symbols;
+    private int[][] board;
     
  public Board() {
     }
@@ -82,7 +84,7 @@ public class Board {
         for(int i=0; i<pairs; i++){
             cards[i]=currentSymbol;
             cards[i+1]=currentSymbol;
-            i++;//we already have i++ in the initializer. Do we need it again???
+            //i++;//we already have i++ in the initializer. Do we need it again??? I don't think so
             currentSymbol++;
         }
     
@@ -90,7 +92,8 @@ public class Board {
             for(int j = 0; j<columnCount; j++){
                 boolean placed = false;
                 while(! placed){
-                    int arrayIndex = Math.Random(0, pairs);
+                    int arrayIndex;
+                    arrayIndex = Math.Random(0, pairs);
                     if (symbols[arrayIndex]>0){
                         board[i][j] = symbols[arrayIndex];
                         symbols[arrayIndex]=-1;
