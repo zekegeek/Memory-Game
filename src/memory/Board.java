@@ -64,36 +64,48 @@ public class Board {
  
     public void createCard(String args[]){
         //assigning just numbers for the card faces for now
-        int size=rowCount*columnCount;
-        int cards[]=new int[size];
         //int cards[][] = new int [rowCount][columnCount];
-        //
+        //int cards[]=new int[size];
+        int size=rowCount*columnCount;
+        int[] cards = {0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7};
         int pairs = size/2;
         
-        int face[] = new int[18];
         /*
-        face[] = { 'cat', 'dog', 'cow', 'moose', 'donkey', 'horse', 'deer',
+        String face[] = new String[18];
+        String[] face = { 'cat', 'dog', 'cow', 'moose', 'donkey', 'horse', 'deer',
         'elk', 'mouse', 'mule', 'chicken', 'turkey', 'emu', 'ostrich',  'worm',
         'snail', 'penguin', 'dragon', 'pig' };
         */
+        
+        int currentSymbol = 0;
+       
         for(int i=0; i<pairs; i++){
-            cards[i]=face;
-            cards[i+1]=face;
-            i++;
-            face++;
+            cards[i]=currentSymbol;
+            cards[i+1]=currentSymbol;
+            i++;//we already have i++ in the initializer. Do we need it again???
+            currentSymbol++;
         }
     
         for(int i = 0; i<rowCount; i++){
             for(int j = 0; j<columnCount; j++){
+                boolean placed = false;
+                while(! placed)
+                    int arrayIndex = Math.Random(0, pairs);
+                    if (symbols[arrayIndex]>0){
+                        board[i][j] = symbols[arrayIndex];
+                        symbols[arrayIndex]=-1;
+                        placed = true;
+                    }
                 cards[i][j] = card;
                 card++;
             }
         }
-        
-        for (int x[] : cards){
+        /*
+        for (int x[] : cards{
             for(int y : x){
                 System.out.println("Card "+x+" = "+y);	
             }
-        }    
+        }
+        */        
     }
 }
