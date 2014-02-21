@@ -81,7 +81,7 @@ public class Board {
         */
         
         int currentSymbol = 0;
-       
+        int arrayIndex;
         for(int i=0; i<pairs; i++){
             cards[i]=currentSymbol;
             cards[i+1]=currentSymbol;
@@ -95,7 +95,7 @@ public class Board {
             for(int j = 0; j<columnCount; j++){
                 boolean placed = false;
                 while(! placed){
-                    int arrayIndex;
+                    
                     arrayIndex = new Random().nextInt(size);
                     if (symbols[arrayIndex]>0){
                         board[i][j] = symbols[arrayIndex];
@@ -104,7 +104,7 @@ public class Board {
                     }
                 }
             }
-        }
+        }      
         /*
         cards[i][j] = card;
         card++;
