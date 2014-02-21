@@ -10,7 +10,7 @@ package memory;
  *
  * @author geojson
  */
-
+import java.util.Random;
 import java.util.Scanner;
 public class Board {
     Scanner in = new Scanner(System.in);
@@ -85,7 +85,9 @@ public class Board {
         for(int i=0; i<pairs; i++){
             cards[i]=currentSymbol;
             cards[i+1]=currentSymbol;
-            //i++;//we already have i++ in the initializer. Do we need it again??? I don't think so
+            i++;
+            //we already have i++ in the initializer. Do we need it again??? I don't think so
+            //the only reason why we would need a second is because we already filled i+1
             currentSymbol++;
         }
     
@@ -94,7 +96,7 @@ public class Board {
                 boolean placed = false;
                 while(! placed){
                     int arrayIndex;
-                    arrayIndex = Math.random(0, pairs);
+                    arrayIndex = new Random().nextInt(size);
                     if (symbols[arrayIndex]>0){
                         board[i][j] = symbols[arrayIndex];
                         symbols[arrayIndex]=-1;
