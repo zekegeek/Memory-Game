@@ -99,7 +99,7 @@ public class Board {
                     arrayIndex = new Random().nextInt(size);
                     if (cards[arrayIndex]>0){
                         board[i][j] = Integer.toString(cards[arrayIndex]);
-                        symbols[arrayIndex]=-1;
+                        cards[arrayIndex]=-1;
                         placed = true;
                     }
                 }
