@@ -17,8 +17,8 @@ public class Board {
     public int columnCount = 4;
     public int rowCount = 4;
     //public Location[][] boardLocations;
-    private int[] symbols;
-    private int[][] board;
+ //   private int[] symbols;
+    private String[][] board;
     
  public Board() {
     }
@@ -97,14 +97,15 @@ public class Board {
                 while(! placed){
                     
                     arrayIndex = new Random().nextInt(size);
-                    if (symbols[arrayIndex]>0){
-                        board[i][j] = symbols[arrayIndex];
+                    if (cards[arrayIndex]>0){
+                        board[i][j] = Integer.toString(cards[arrayIndex]);
                         symbols[arrayIndex]=-1;
                         placed = true;
                     }
                 }
             }
         }      
+        //board = new string [rowCount][columnCount]
         /*
         cards[i][j] = card;
         card++;
@@ -113,6 +114,24 @@ public class Board {
                 System.out.println("Card "+x+" = "+y);	
             }
         }
-        */        
-    }
+        */ 
+        
+       
+
+        }
+    
+public void nameCards() {
+         String[] symbols = { "cat", "dog", "cow", "moose", "donkey", "horse", "deer",
+        "elk", "mouse", "mule", "chicken", "turkey", "emu", "ostrich",  "worm",
+        "snail", "penguin", "dragon", "pig", "bird", "giraffe", "elephant", 
+        "fish", "whale", "monkey", "bear", "owl", "snake" };
+}
+for (String [] row : board)
+{
+for(String card: board) {
+int cardIndex=Integer.parseInt(card);
+card=symbols[cardIndex];
+
+}
+}
 }
