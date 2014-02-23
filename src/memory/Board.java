@@ -125,13 +125,17 @@ public void nameCards() {
         "elk", "mouse", "mule", "chicken", "turkey", "emu", "ostrich",  "worm",
         "snail", "penguin", "dragon", "pig", "bird", "giraffe", "elephant", 
         "fish", "whale", "monkey", "bear", "owl", "snake" };
-}
+
+int cardsums = 0;
 for (String [] row : board)
 {
-for(String card: board) {
+for(String card: row) 
+{
 int cardIndex=Integer.parseInt(card);
-card=symbols[cardIndex];
+card= symbols [cardIndex];
+cardsums+= cardIndex;
 
+}
 }
 }
 }
