@@ -29,6 +29,8 @@ public class Game {
     char card1;
     char card2;
     char currentPlayer, player1, player2;
+    byte score1=0;
+    byte score2=0;
     
     /*
     I think the main part of the game will be inside another loop. Something
@@ -44,19 +46,65 @@ public class Game {
     set currentPlayer to player2. Then just loop over that until there's no more cards.
     */
     
-    public void takeTurns2(){
-        byte score1=0;
-        byte score2=0;
+    public void takeTurns(){
+        
         int totalScore=score1+score2;
         currentPlayer = player1;
+        int currentScore = score1;
         
+        while (totalScore<18){
+            System.out.println(currentPlayer+"'s Turn");
+            card1 = selectCard();
+            card2 = selectCard();
+            match = checkMatch();
+            if (match==true){
+                currentScore++;
+                if (totalScore==18){
+                    break;
+                }
+                return;
+                //I want this to return to the beginning of the while loop
+                //This should do it (I think)
+            }
+            //else switch players
+            else{
+                if(currentPlayer==player1){
+                    currentPlayer=player2;
+                    currentScore=score2;
+                }
+                else
+                    currentPlayer=player1;
+                    currentScore=score1;
+            }
+        }
         
-        
+        if(score1>score2){
+            System.out.println(
+                    "\n\t*******************************************************************************"
+                    + "\n\t\tGame Over.\nPlayer1 Wins!"
+                    + "\n\t*******************************************************************************");
+        }
+        else if(score1<score2){
+            System.out.println(
+                    "\n\t*******************************************************************************"
+                    +"Game Over.\nPlayer2 Wins!"
+                    +"\n\t*******************************************************************************");            
+        }
+        else{
+            System.out.println(
+                    "\n\t*******************************************************************************"
+                    +"Game Over.\nIt's a Tie!"
+                    +"\n\t*******************************************************************************");            
+        }
+        Game game = new Game();
+        GamePreferenceView gamePreferenceMenu = new GamePreferenceView(game);
+        gamePreferenceMenu.getInput();
     }
+    
+    /*
+    }ORIGINAL CODE
     public void takeTurns(){
-        byte score1=0;
-        byte score2=0;
-        int totalScore=(int)((int)score1+score2);
+        int totalScore=(score1+score2);
         //this might have to turn into a switch statment in order to give the 
         //player another turn.
         while (totalScore<18){
@@ -72,6 +120,7 @@ public class Game {
                 //else{give player1 another turn
                 //start from the println}
             }
+            currentPlayer = player2;
             System.out.println("Player2's Turn");
             card1 = selectCard();
             card2 = selectCard();
@@ -84,21 +133,7 @@ public class Game {
                 //else{give player2 another turn
                 //start from the println}
             }    
-        }
-        if(score1>score2){
-            System.out.println("Game Over.\nPlayer1 Wins!");
-            //two buttons: Play Again, Main Menu
-        }
-        else if(score1<score2){
-            System.out.println("Game Over.\nPlayer2 Wins!");
-            //two buttons: Play Again, Main Menu
-        }
-        else{
-            System.out.println("Game Over.\nIt's a Tie!");
-            //two buttons: Play Again, Main Menu
-        }
-    }
-    
+        }*/
     /*
     Another approach would be to hold the cards in a 2d array. That would look 
     something like Card[][] cards. Then you could access a particular Card by 
@@ -156,5 +191,4 @@ public class Game {
     public void createCard(){
         
     }
-
 }

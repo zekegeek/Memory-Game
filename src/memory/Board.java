@@ -17,7 +17,7 @@ public class Board {
     public int columnCount = 4;
     public int rowCount = 4;
     //public Location[][] boardLocations;
- //   private int[] symbols;
+    //private int[] symbols;
     private String[][] board;
     
  public Board() {
@@ -82,12 +82,11 @@ public class Board {
         
         int currentSymbol = 0;
         int arrayIndex;
+        //there are two i++ because we fill i+1 during the loop
         for(int i=0; i<pairs; i++){
             cards[i]=currentSymbol;
             cards[i+1]=currentSymbol;
-            i++;
-            //we already have i++ in the initializer. Do we need it again??? I don't think so
-            //the only reason why we would need a second is because we already filled i+1
+            i++;            
             currentSymbol++;
         }
     
@@ -119,23 +118,18 @@ public class Board {
        
 
         }
-    
-public void nameCards() {
+    public void nameCards() {
          String[] symbols = { "cat", "dog", "cow", "moose", "donkey", "horse", "deer",
         "elk", "mouse", "mule", "chicken", "turkey", "emu", "ostrich",  "worm",
         "snail", "penguin", "dragon", "pig", "bird", "giraffe", "elephant", 
         "fish", "whale", "monkey", "bear", "owl", "snake" };
-
-int cardsums = 0;
-for (String [] row : board)
-{
-for(String card: row) 
-{
-int cardIndex=Integer.parseInt(card);
-card= symbols [cardIndex];
-cardsums+= cardIndex;
-
-}
-}
-}
+         int cardsums = 0;
+         for (String [] row : board){
+             for(String card: row){
+                 int cardIndex=Integer.parseInt(card);
+                 card= symbols [cardIndex];
+                 cardsums+= cardIndex;
+            }
+        }
+    }
 }

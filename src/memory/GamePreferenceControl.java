@@ -14,8 +14,8 @@ import java.util.Scanner;
  */
 public class GamePreferenceControl {
     private Game game;
-    private int match=6;
-    private int players=2;
+    public int match=6;
+    public int players=2;
     GamePreferenceControl(Game game) {
         this.game = game;
     }

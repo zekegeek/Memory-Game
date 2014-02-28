@@ -14,6 +14,7 @@ import java.util.Scanner;
  */
 public class GamePreferenceView {
     Game game;
+    
     private final GamePreferenceControl gamePreferenceControl = new GamePreferenceControl(game);
 
     private final static String[][] menuItems = {
