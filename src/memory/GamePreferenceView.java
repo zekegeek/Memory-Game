@@ -39,7 +39,8 @@ public class GamePreferenceView {
             switch (command){
                 case "S":
                     //Game newGame = new Game();
-                    new Game().newGame("Your game has started! Or will as soon as we get it coded.");
+                    //new Game().newGame(game);
+                    this.gamePreferenceControl.getGame();
                     break;
                 case "P":
                     this.gamePreferenceControl.getPlayers();
