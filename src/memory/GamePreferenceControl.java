@@ -21,6 +21,8 @@ public class GamePreferenceControl {
     }
     
     public Game getGame(){
+        if(game == null) game = new Game();
+        game.newGame();
         return game;
     }
     

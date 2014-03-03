@@ -38,9 +38,7 @@ public class GamePreferenceView {
             command = command.trim().toUpperCase();
             switch (command){
                 case "S":
-                    Game newGame = new Game();
-                    new Game().newGame(game);
-                    //this.gamePreferenceControl.getGame();
+                    this.gamePreferenceControl.getGame();
                     break;
                 case "P":
                     this.gamePreferenceControl.getPlayers();

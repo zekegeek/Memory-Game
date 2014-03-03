@@ -16,11 +16,15 @@ public class Board {
     Scanner in = new Scanner(System.in);
     public int columnCount = 4;
     public int rowCount = 4;
+    public int boardSize;
     //public Location[][] boardLocations;
     //private int[] symbols;
     private String[][] board;
     
  public Board() {
+     createBoard();
+     createCards();
+     nameCards();
     }
     
  public void createBoard() {
@@ -39,7 +43,7 @@ public class Board {
         }
      
      
-        int boardSize= columnCount*rowCount;
+        boardSize= columnCount*rowCount;
         if(boardSize%2==1){
             columnCount++ ;
             boardSize=(columnCount*rowCount);
@@ -65,7 +69,7 @@ public class Board {
  }
  
  
-    public void createCard(String args[]){
+    public void createCards(){
         //assigning just numbers for the card faces for now
         //int cards[][] = new int [rowCount][columnCount];
         //int cards[]=new int[size];

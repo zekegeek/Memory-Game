@@ -15,11 +15,13 @@ import java.util.Scanner;
 public class Game {
     Board board;
    
-    public Object newGame(Object object) {
-        String message = (String) object;
+    public Object newGame() {
+        //String message = object.toString();
         System.out.println("\t-------------------------------------------------------------------------------");
-        System.out.println("\tNew Game: " + message);
+        System.out.println("\tNew Game: ");
         System.out.println("\t-------------------------------------------------------------------------------");
+        board = new Board();
+        takeTurns();
         return null;
    
     }
@@ -52,7 +54,7 @@ public class Game {
         currentPlayer = player1;
         int currentScore = score1;
         
-        while (totalScore<18){
+        while (totalScore<(board.boardSize/2)){
             System.out.println(currentPlayer+"'s Turn");
             card1 = selectCard();
             card2 = selectCard();
