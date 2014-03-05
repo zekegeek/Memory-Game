@@ -19,7 +19,8 @@ public class Board {
     public int boardSize;
     //public Location[][] boardLocations;
     //private int[] symbols;
-    private String[][] board;
+    private Card[][] board;
+    private int [][] shuffleBoard;
     
  public Board() {
      createBoard();
@@ -28,19 +29,21 @@ public class Board {
     }
     
  public void createBoard() {
-      System.out.println("Please enter the number of columns you would like, "
-              + "between 1 and 12.");
-     columnCount= in.nextInt();
-     if(columnCount<0 && columnCount>12){
-        System.out.println("Please input a number 1-12");
-        columnCount= in.nextInt();
-        System.out.println("\"Please enter the number of rows you would like, " +
-"              + \"between 1 and 12.\"");
+     System.out.println("\"Please enter the number of rows you would like, " +
+"              + \"between 1 and 8.\"");
         rowCount= in.nextInt();
-        if(rowCount<0 && rowCount>13){
-            System.out.println("Please input a number 1-12");
+        while(rowCount<0 || rowCount>8){
+            System.out.println("Please input a number 1-8");
             rowCount= in.nextInt();
         }
+      System.out.println("Please enter the number of columns you would like, "
+              + "between 1 and 7.");
+     columnCount= in.nextInt();
+     while(columnCount<0 || columnCount>7){
+        System.out.println("Please enter a number between 1 and 8");
+        columnCount= in.nextInt();
+     }
+         
      
      
         boardSize= columnCount*rowCount;
@@ -55,14 +58,19 @@ public class Board {
             System.out.println("\n The board has " + boardSize + "cards."); 
         }
         
+        board = new Card [rowCount] [columnCount];
         }
        
-}
+
  public void displayBoard() {
      System.out.println("Here is your board!:");
      for(int t=0; t<rowCount; t++){
         for(int i=0; i<columnCount; i++) {
-            System.out.print("x\t");
+            if (board[t][i].matched){
+                System.out.print(board[t][i].name + "-" + board[t][i].owner);
+            }
+            else System.out.print(t + "-" + i);
+            System.out.print("\t");
         }
         System.out.print("\n\n");
      }
@@ -74,20 +82,16 @@ public class Board {
         //int cards[][] = new int [rowCount][columnCount];
         //int cards[]=new int[size];
         int size=rowCount*columnCount;
-        int[] cards = {0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7};
+        int[] cards = new int[size];
         int pairs = size/2;
         
-        /*
-        String face[] = new String[18];
-        String[] face = { 'cat', 'dog', 'cow', 'moose', 'donkey', 'horse', 'deer',
-        'elk', 'mouse', 'mule', 'chicken', 'turkey', 'emu', 'ostrich',  'worm',
-        'snail', 'penguin', 'dragon', 'pig' };
-        */
+        shuffleBoard = new int [rowCount] [columnCount];
+
         
         int currentSymbol = 0;
         int arrayIndex;
         //there are two i++ because we fill i+1 during the loop
-        for(int i=0; i<pairs; i++){
+        for(int i=0; i<size; i++){
             cards[i]=currentSymbol;
             cards[i+1]=currentSymbol;
             i++;            
@@ -101,7 +105,7 @@ public class Board {
                     
                     arrayIndex = new Random().nextInt(size);
                     if (cards[arrayIndex]>0){
-                        board[i][j] = Integer.toString(cards[arrayIndex]);
+                        shuffleBoard[i][j] = cards[arrayIndex];
                         cards[arrayIndex]=-1;
                         placed = true;
                     }
@@ -127,13 +131,18 @@ public class Board {
         "elk", "mouse", "mule", "chicken", "turkey", "emu", "ostrich",  "worm",
         "snail", "penguin", "dragon", "pig", "bird", "giraffe", "elephant", 
         "fish", "whale", "monkey", "bear", "owl", "snake" };
-         int cardsums = 0;
-         for (String [] row : board){
-             for(String card: row){
-                 int cardIndex=Integer.parseInt(card);
-                 card= symbols [cardIndex];
-                 cardsums+= cardIndex;
+         for(int t=0; t<rowCount; t++){
+           for(int i=0; i<columnCount; i++) {
+              int cardIndex=shuffleBoard[t][i];
+             Card thisCard = new Card(symbols [cardIndex]);
+             thisCard.row = t;
+             thisCard.col = i;
+             board[t][i] = thisCard;
             }
         }
+        
+    }
+    public Card getCard(int row, int column){
+    return board[row][column];
     }
 }

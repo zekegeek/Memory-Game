@@ -8,10 +8,7 @@ package memory;
 
 import java.util.Scanner;
 
-/**
- *
- * @author Cook
- */
+
 public class Game {
     Board board;
    
@@ -28,9 +25,11 @@ public class Game {
     
     
     boolean match;
-    char card1;
-    char card2;
-    char currentPlayer, player1, player2;
+    Card card1;
+    Card card2;
+    int currentPlayer; 
+    int player1 = 1; 
+    int player2 = 2;
     byte score1=0;
     byte score2=0;
     
@@ -56,11 +55,15 @@ public class Game {
         
         while (totalScore<(board.boardSize/2)){
             System.out.println(currentPlayer+"'s Turn");
+            board.displayBoard();
             card1 = selectCard();
+            System.out.println("this card is: " + card1.name);
             card2 = selectCard();
-            match = checkMatch();
+            System.out.println("this card is: " + card2.name);
+            match = checkMatch(card1, card2);
             if (match==true){
                 currentScore++;
+                System.out.println("Congratulations, you found a match! Your current score is: " + currentScore);
                 if (totalScore==18){
                     break;
                 }
@@ -143,54 +146,64 @@ public class Game {
     need to convert the horizontal char into an int, but going this way might be 
     easier than creating a composite index of vertical+horizontal.
     */
-    private char selectCard(){
+ private Card selectCard(){
         
-        char[] validValues = {'A', 'B', 'C','D', 'E', 'F', 'a', 'b', 'c', 'd', 'e', 'f'};
-        byte vertical=3;
-        char horizontal='A';
-        
-        if (vertical < 1 || vertical > 6){
-          System.out.println("That is not a valid number."
-                  + "\nPlease enter a value between 1 and 6.");
-        }
-        else{
-            for(int i = 0; i < validValues.length; i++)
-            {
-                if(validValues[i] != horizontal){ 
-                    System.out.println("That is an invalid value."
-                            + "\nPlease enter a letter between A and F.");                    
-                }
-            }
-        }
-        char card = (char)((char) vertical+horizontal);
-        return card;   
-    }
-        
-    private boolean checkMatch(){
-         
-        showCards();
-         //if checkMatch(true){
-        //run removeCards function
-        return true;
-    }
-    private void getCards(){
+      
+        int row;
+        int column;
+        Card card = null;
+                
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter the card's location: ");
-        //this.card1 = input.next();
+        boolean validCard = false;
         
-        System.out.println("Enter the second card's location: ");
-        //this.card2 = input.next();
-    }
-    private void showCards(){
-        //retrieve cards from createBoard
-        //reveal/return cards
-    }
-    
-    private void removeCards(){
-        //remove the two selected cards
-    }
-    
-    public void createCard(){
+        while (validCard==false)
+        {
+        System.out.println("Enter a row number for the card:");
+        row = input.nextInt();
+        while (row < 0 || row > board.rowCount){
+          System.out.println("That is not a valid number."
+                  + "\nPlease enter a value between 0 and "+board.rowCount);
+        }
         
+        System.out.println("Enter a column number for the card:");
+        column = input.nextInt();
+        while (column < 0 || column > board.columnCount){
+          System.out.println("That is not a valid number."
+                  + "\nPlease enter a value between 1 and "+board.columnCount);
+        }
+      
+       card = board.getCard(row, column);
+        
+        if(card.matched)
+        {
+            System.out.println("That card has already been chosen"
+                  + "\nPlease try a different card");
+            break;
+        }
+        else validCard = true;
+        }// end while
+        return card;
+               
     }
+
+        
+    
+        
+
+        private boolean checkMatch(Card card1, Card card2){
+       
+        if (card1.name.equals(card2.name))
+        {
+            card1.matched = true;
+            card1.owner = currentPlayer;
+            
+            card2.matched = true;
+            card2.owner = currentPlayer;
+            
+            return true;
+        }
+       else
+            return false;
+    }
+        
 }
