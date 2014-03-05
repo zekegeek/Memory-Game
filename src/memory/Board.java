@@ -17,8 +17,8 @@ public class Board {
     public int columnCount = 4;
     public int rowCount = 4;
     public int boardSize;
-    //public Location[][] boardLocations;
-    //private int[] symbols;
+    public Location[][] boardLocations;
+    private int[] symbols;
     private String[][] board;
     
  public Board() {
@@ -136,4 +136,56 @@ public class Board {
             }
         }
     }
+    public class Location {
+
+        private int row;
+        private int column;
+        private String value;
+        //private Player player;
+
+        Location() {
+        }
+
+        int getRow() {
+            return row;
+        }
+
+        void setRow(int row) {
+            this.row = row;
+        }
+
+        int getColumn() {
+            return column;
+        }
+
+        void setColumn(int column) {
+            this.column = column;
+        }
+
+        String getValue() {
+            return value;
+        }
+
+        void setValue(String value) {
+            this.value = value;
+        }
+/*
+        Player getPlayer() {
+            return player;
+        }
+
+        public void setPlayer(Player player) {
+            this.player = player;
+        }
+*/
+        String[] getCoordinates() {
+            String[] coordinates = new String[2];
+            Integer intRow = this.getRow() + 1;
+            Integer intColumn = this.getColumn() + 1;
+            coordinates[0] = intRow.toString();
+            coordinates[1] = intColumn.toString();
+            return coordinates;
+        }
+    }
+    
 }
