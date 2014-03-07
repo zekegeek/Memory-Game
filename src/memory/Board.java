@@ -29,8 +29,8 @@ public class Board {
     }
     
  public void createBoard() {
-     System.out.println("\"Please enter the number of rows you would like, " +
-"              + \"between 1 and 8.\"");
+     System.out.println("Please enter the number of rows you would like, " +
+"between 1 and 8.");
         rowCount= in.nextInt();
         while(rowCount<0 || rowCount>8){
             System.out.println("Please input a number 1-8");
