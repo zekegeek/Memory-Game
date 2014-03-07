@@ -10,9 +10,10 @@ package memory;
  *
  * @author geojson
  */
+import java.io.Serializable;
 import java.util.Random;
 import java.util.Scanner;
-public class Board {
+public class Board implements Serializable{
     private Scanner in = new Scanner(System.in);
     private int columnCount = 4;
     private int rowCount = 4;

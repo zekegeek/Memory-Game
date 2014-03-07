@@ -6,11 +6,13 @@
 
 package memory;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Catherine
  */
-public class Card {
+public class Card implements Serializable{
     private String name;
     private boolean matched;
     private int owner;  
