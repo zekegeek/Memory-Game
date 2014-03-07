@@ -64,12 +64,6 @@ public class Game {
             if (match==true){
                 currentScore++;
                 System.out.println("Congratulations, you found a match! Your current score is: " + currentScore);
-                if (totalScore==18){
-                    break;
-                }
-                return;
-                //I want this to return to the beginning of the while loop
-                //This should do it (I think)
             }
             //else switch players
             else{
