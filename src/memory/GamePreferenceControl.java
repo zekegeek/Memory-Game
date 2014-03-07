@@ -6,16 +6,18 @@
 
 package memory;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
  *
  * @author Cook
  */
-public class GamePreferenceControl {
+public class GamePreferenceControl implements Serializable{
     private Game game;
-    public int match=6;
-    public int players=2;
+    private int match=6;
+    private int players=2;
+    
     GamePreferenceControl(Game game) {
         this.game = game;
     }
@@ -31,18 +33,18 @@ public class GamePreferenceControl {
     }
     
     public int getMatches(){
-        match = 6;
-        System.out.println("\n\tNumber of Matches:" + match);
+        setMatch(6);
+        System.out.println("\n\tNumber of Matches:" + getMatch());
         
         Scanner input = new Scanner(System.in);
         System.out.println("Enter the number of matches you want: ");
-        this.match = input.nextInt();
+        this.setMatch(input.nextInt());
         //this input method accepts Int.
         //possibly change to byte input when know how. 
-        if (match<2 || match >10){
+        if (getMatch()<2 || getMatch() >10){
             System.out.println("Invalid Command. Please enter a valid command.");
         }
-        return match;
+        return getMatch();
     }
     
     public int getPlayers(){
@@ -61,5 +63,26 @@ public class GamePreferenceControl {
     public boolean getDimentions(){
         System.out.println("\n\tBoard Dimentions: Default");
         return true;
+    }
+
+    /**
+     * @return the match
+     */
+    public int getMatch() {
+        return match;
+    }
+
+    /**
+     * @param match the match to set
+     */
+    public void setMatch(int match) {
+        this.match = match;
+    }
+
+    /**
+     * @param players the players to set
+     */
+    public void setPlayers(int players) {
+        this.players = players;
     }
 }

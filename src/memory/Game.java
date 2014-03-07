@@ -114,12 +114,12 @@ public class Game implements Serializable{
     
     private void takeTurns(){
         
-        int totalScore=score1+score2;
-        currentPlayer = player1;
-        int currentScore = score1;
+        int totalScore=getScore1()+getScore2();
+        setCurrentPlayer(getPlayer1());
+        int currentScore = getScore1();
         
         while (totalScore<(board.getBoardSize()/2)){
-            System.out.println(currentPlayer+"'s Turn");
+            System.out.println(getCurrentPlayer()+"'s Turn");
             board.displayBoard();
             card1 = selectCard();
             System.out.println("this card is: " + card1.getName());
@@ -132,23 +132,23 @@ public class Game implements Serializable{
             }
             //else switch players
             else{
-                if(currentPlayer==player1){
-                    currentPlayer=player2;
-                    currentScore=score2;
+                if(getCurrentPlayer()==getPlayer1()){
+                    setCurrentPlayer(getPlayer2());
+                    currentScore=getScore2();
                 }
                 else
-                    currentPlayer=player1;
-                    currentScore=score1;
+                    setCurrentPlayer(getPlayer1());
+                    currentScore=getScore1();
             }
         }
         
-        if(score1>score2){
+        if(getScore1()>getScore2()){
             System.out.println(
                     "\n\t*******************************************************************************"
                     + "\n\t\tGame Over.\nPlayer1 Wins!"
                     + "\n\t*******************************************************************************");
         }
-        else if(score1<score2){
+        else if(getScore1()<getScore2()){
             System.out.println(
                     "\n\t*******************************************************************************"
                     +"Game Over.\nPlayer2 Wins!"
@@ -211,10 +211,10 @@ public class Game implements Serializable{
         if (card1.getName().equals(card2.getName()))
         {
             card1.setMatched(true);
-            card1.setOwner(currentPlayer);
+            card1.setOwner(getCurrentPlayer());
             
             card2.setMatched(true);
-            card2.setOwner(currentPlayer);
+            card2.setOwner(getCurrentPlayer());
             
             return true;
         }

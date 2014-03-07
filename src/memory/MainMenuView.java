@@ -6,12 +6,13 @@
 
 package memory;
 
+import java.io.Serializable;
 import java.util.Scanner;
 /**
  *
  * @author Catherine
  */
-public class MainMenuView {
+public class MainMenuView implements Serializable{
     
     
     private static final String[][] menuItems = {

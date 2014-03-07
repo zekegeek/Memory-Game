@@ -6,13 +6,14 @@
 
 package memory;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
  *
  * @author Cook
  */
-public class GamePreferenceView {
+public class GamePreferenceView implements Serializable{
     Game game;
     
     private final GamePreferenceControl gamePreferenceControl = new GamePreferenceControl(game);

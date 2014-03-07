@@ -6,13 +6,14 @@
 
 package memory;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
  *
  * @author Catherine
  */
-public class MainMenuControl {
+public class MainMenuControl implements Serializable{
     public void displayGamePreferenceMenu() {
         Game game = new Game();
         GamePreferenceView gamePreferenceMenu = new GamePreferenceView(game);
