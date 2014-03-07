@@ -66,8 +66,8 @@ public class Board {
      System.out.println("Here is your board!:");
      for(int t=0; t<rowCount; t++){
         for(int i=0; i<columnCount; i++) {
-            if (board[t][i].matched){
-                System.out.print(board[t][i].name + "-" + board[t][i].owner);
+            if (board[t][i].isMatched()){
+                System.out.print(board[t][i].getName() + "-" + board[t][i].getOwner());
             }
             else System.out.print(t + "-" + i);
             System.out.print("\t");
@@ -135,8 +135,8 @@ public class Board {
            for(int i=0; i<columnCount; i++) {
               int cardIndex=shuffleBoard[t][i];
              Card thisCard = new Card(symbols [cardIndex]);
-             thisCard.row = t;
-             thisCard.col = i;
+             thisCard.setRow(t);
+             thisCard.setCol(i);
              board[t][i] = thisCard;
             }
         }

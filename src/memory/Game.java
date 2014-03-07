@@ -122,9 +122,9 @@ public class Game implements Serializable{
             System.out.println(currentPlayer+"'s Turn");
             board.displayBoard();
             card1 = selectCard();
-            System.out.println("this card is: " + card1.name);
+            System.out.println("this card is: " + card1.getName());
             card2 = selectCard();
-            System.out.println("this card is: " + card2.name);
+            System.out.println("this card is: " + card2.getName());
             match = checkMatch(card1, card2);
             if (match==true){
                 currentScore++;
@@ -194,7 +194,7 @@ public class Game implements Serializable{
       
        card = board.getCard(row, column);
         
-        if(card.matched)
+        if(card.isMatched())
         {
             System.out.println("That card has already been chosen"
                   + "\nPlease try a different card");
@@ -208,13 +208,13 @@ public class Game implements Serializable{
 
         private boolean checkMatch(Card card1, Card card2){
        
-        if (card1.name.equals(card2.name))
+        if (card1.getName().equals(card2.getName()))
         {
-            card1.matched = true;
-            card1.owner = currentPlayer;
+            card1.setMatched(true);
+            card1.setOwner(currentPlayer);
             
-            card2.matched = true;
-            card2.owner = currentPlayer;
+            card2.setMatched(true);
+            card2.setOwner(currentPlayer);
             
             return true;
         }
