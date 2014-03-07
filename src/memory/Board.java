@@ -55,7 +55,7 @@ public class Board {
                     + "to " + boardSize + "cards"); 
         }
         else {
-            System.out.println("\n The board has " + boardSize + "cards."); 
+            System.out.println("\n The board has " + boardSize + " cards."); 
         }
         
         board = new Card [rowCount] [columnCount];
@@ -104,7 +104,7 @@ public class Board {
                 while(! placed){
                     
                     arrayIndex = new Random().nextInt(size);
-                    if (cards[arrayIndex]>0){
+                    if (cards[arrayIndex]>=0){
                         shuffleBoard[i][j] = cards[arrayIndex];
                         cards[arrayIndex]=-1;
                         placed = true;
