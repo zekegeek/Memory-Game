@@ -118,7 +118,7 @@ public class Game implements Serializable{
         currentPlayer = player1;
         int currentScore = score1;
         
-        while (totalScore<(board.boardSize/2)){
+        while (totalScore<(board.getBoardSize()/2)){
             System.out.println(currentPlayer+"'s Turn");
             board.displayBoard();
             card1 = selectCard();
@@ -180,16 +180,16 @@ public class Game implements Serializable{
         {
         System.out.println("Enter a row number for the card:");
         row = input.nextInt();
-        while (row < 0 || row > (board.rowCount -1)){
+        while (row < 0 || row > (board.getRowCount() -1)){
           System.out.println("That is not a valid number."
-                  + "\nPlease enter a value between 0 and "+ (board.rowCount -1));
+                  + "\nPlease enter a value between 0 and "+ (board.getRowCount() -1));
         }
         
         System.out.println("Enter a column number for the card:");
         column = input.nextInt();
-        while (column < 0 || column > (board.columnCount -1)){
+        while (column < 0 || column > (board.getColumnCount() -1)){
           System.out.println("That is not a valid number."
-                  + "\nPlease enter a value between 1 and "+(board.columnCount -1));
+                  + "\nPlease enter a value between 1 and "+(board.getColumnCount() -1));
         }
       
        card = board.getCard(row, column);

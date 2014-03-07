@@ -88,8 +88,8 @@ public class GetLocationView {
             Board board = this.game.board; 
             
             // Check for invalid row and column entered
-            if (row < 1   ||  row > board.rowCount ||
-                column < 1  ||  column > board.columnCount) {
+            if (row < 1   ||  row > board.getRowCount() ||
+                column < 1  ||  column > board.getColumnCount()) {
                 System.out.println(
                         "Enter a valid number of rows and columns from 3 to 10. Try again.");
                 continue;

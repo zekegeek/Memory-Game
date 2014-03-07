@@ -13,10 +13,10 @@ package memory;
 import java.util.Random;
 import java.util.Scanner;
 public class Board {
-    Scanner in = new Scanner(System.in);
-    public int columnCount = 4;
-    public int rowCount = 4;
-    public int boardSize;
+    private Scanner in = new Scanner(System.in);
+    private int columnCount = 4;
+    private int rowCount = 4;
+    private int boardSize;
     //public Location[][] boardLocations;
     //private int[] symbols;
     private Card[][] board;
@@ -31,43 +31,43 @@ public class Board {
  public void createBoard() {
      System.out.println("Please enter the number of rows you would like, " +
 "between 1 and 8.");
-        rowCount= in.nextInt();
-        while(rowCount<0 || rowCount>8){
+        setRowCount(getIn().nextInt());
+        while(getRowCount()<0 || getRowCount()>8){
             System.out.println("Please input a number 1-8");
-            rowCount= in.nextInt();
+            setRowCount(getIn().nextInt());
         }
       System.out.println("Please enter the number of columns you would like, "
               + "between 1 and 7.");
-     columnCount= in.nextInt();
-     while(columnCount<0 || columnCount>7){
+        setColumnCount(getIn().nextInt());
+     while(getColumnCount()<0 || getColumnCount()>7){
         System.out.println("Please enter a number between 1 and 8");
-        columnCount= in.nextInt();
+            setColumnCount(getIn().nextInt());
      }
          
      
      
-        boardSize= columnCount*rowCount;
-        if(boardSize%2==1){
-            columnCount++ ;
-            boardSize=(columnCount*rowCount);
+        setBoardSize(getColumnCount() * getRowCount());
+        if(getBoardSize()%2==1){
+            setColumnCount(getColumnCount() + 1) ;
+            setBoardSize(getColumnCount() * getRowCount());
             System.out.println(" \n \t To ensure an even number of cards so that"
                     + "all cards have matches, the board size has been increased"
-                    + "to " + boardSize + "cards"); 
+                    + "to " + getBoardSize() + "cards"); 
         }
         else {
-            System.out.println("\n The board has " + boardSize + " cards."); 
+            System.out.println("\n The board has " + getBoardSize() + " cards."); 
         }
         
-        board = new Card [rowCount] [columnCount];
+        setBoard(new Card[getRowCount()][getColumnCount()]);
         }
        
 
  public void displayBoard() {
      System.out.println("Here is your board!:");
-     for(int t=0; t<rowCount; t++){
-        for(int i=0; i<columnCount; i++) {
-            if (board[t][i].isMatched()){
-                System.out.print(board[t][i].getName() + "-" + board[t][i].getOwner());
+     for(int t=0; t<getRowCount(); t++){
+        for(int i=0; i<getColumnCount(); i++) {
+            if (getBoard()[t][i].isMatched()){
+                System.out.print(getBoard()[t][i].getName() + "-" + getBoard()[t][i].getOwner());
             }
             else System.out.print(t + "-" + i);
             System.out.print("\t");
@@ -81,11 +81,11 @@ public class Board {
         //assigning just numbers for the card faces for now
         //int cards[][] = new int [rowCount][columnCount];
         //int cards[]=new int[size];
-        int size=rowCount*columnCount;
+        int size=getRowCount()*getColumnCount();
         int[] cards = new int[size];
         int pairs = size/2;
         
-        shuffleBoard = new int [rowCount] [columnCount];
+        setShuffleBoard(new int[getRowCount()][getColumnCount()]);
 
         
         int currentSymbol = 0;
@@ -98,14 +98,14 @@ public class Board {
             currentSymbol++;
         }
     
-        for(int i = 0; i<rowCount; i++){
-            for(int j = 0; j<columnCount; j++){
+        for(int i = 0; i<getRowCount(); i++){
+            for(int j = 0; j<getColumnCount(); j++){
                 boolean placed = false;
                 while(! placed){
                     
                     arrayIndex = new Random().nextInt(size);
                     if (cards[arrayIndex]>=0){
-                        shuffleBoard[i][j] = cards[arrayIndex];
+                        getShuffleBoard()[i][j] = cards[arrayIndex];
                         cards[arrayIndex]=-1;
                         placed = true;
                     }
@@ -131,18 +131,102 @@ public class Board {
         "elk", "mouse", "mule", "chicken", "turkey", "emu", "ostrich",  "worm",
         "snail", "penguin", "dragon", "pig", "bird", "giraffe", "elephant", 
         "fish", "whale", "monkey", "bear", "owl", "snake" };
-         for(int t=0; t<rowCount; t++){
-           for(int i=0; i<columnCount; i++) {
-              int cardIndex=shuffleBoard[t][i];
+         for(int t=0; t<getRowCount(); t++){
+           for(int i=0; i<getColumnCount(); i++) {
+              int cardIndex=getShuffleBoard()[t][i];
              Card thisCard = new Card(symbols [cardIndex]);
              thisCard.setRow(t);
              thisCard.setCol(i);
-             board[t][i] = thisCard;
+                getBoard()[t][i] = thisCard;
             }
         }
         
     }
     public Card getCard(int row, int column){
-    return board[row][column];
+    return getBoard()[row][column];
+    }
+
+    /**
+     * @return the in
+     */
+    public Scanner getIn() {
+        return in;
+    }
+
+    /**
+     * @param in the in to set
+     */
+    public void setIn(Scanner in) {
+        this.in = in;
+    }
+
+    /**
+     * @return the columnCount
+     */
+    public int getColumnCount() {
+        return columnCount;
+    }
+
+    /**
+     * @param columnCount the columnCount to set
+     */
+    public void setColumnCount(int columnCount) {
+        this.columnCount = columnCount;
+    }
+
+    /**
+     * @return the rowCount
+     */
+    public int getRowCount() {
+        return rowCount;
+    }
+
+    /**
+     * @param rowCount the rowCount to set
+     */
+    public void setRowCount(int rowCount) {
+        this.rowCount = rowCount;
+    }
+
+    /**
+     * @return the boardSize
+     */
+    public int getBoardSize() {
+        return boardSize;
+    }
+
+    /**
+     * @param boardSize the boardSize to set
+     */
+    public void setBoardSize(int boardSize) {
+        this.boardSize = boardSize;
+    }
+
+    /**
+     * @return the board
+     */
+    public Card[][] getBoard() {
+        return board;
+    }
+
+    /**
+     * @param board the board to set
+     */
+    public void setBoard(Card[][] board) {
+        this.board = board;
+    }
+
+    /**
+     * @return the shuffleBoard
+     */
+    public int[][] getShuffleBoard() {
+        return shuffleBoard;
+    }
+
+    /**
+     * @param shuffleBoard the shuffleBoard to set
+     */
+    public void setShuffleBoard(int[][] shuffleBoard) {
+        this.shuffleBoard = shuffleBoard;
     }
 }
