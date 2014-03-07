@@ -133,13 +133,7 @@ public class Game {
                 //start from the println}
             }    
         }*/
-    /*
-    Another approach would be to hold the cards in a 2d array. That would look 
-    something like Card[][] cards. Then you could access a particular Card by 
-    saying cards[row][column] where row and column are ints. It would mean you'd 
-    need to convert the horizontal char into an int, but going this way might be 
-    easier than creating a composite index of vertical+horizontal.
-    */
+
  private Card selectCard(){
         
       
