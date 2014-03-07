@@ -6,11 +6,99 @@
 
 package memory;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 
-public class Game {
+public class Game implements Serializable{
     Board board;
+    
+    private boolean match;
+    private Card card1;
+    private Card card2;
+    private int currentPlayer; 
+    private int player1 = 1; 
+    private int player2 = 2;
+    private byte score1=0;
+    private byte score2=0;
+    
+    
+    public Game() {
+    }
+
+    private Board getBoard() {
+        return board;
+    }
+
+    private void setBoard(Board board) {
+        this.board = board;
+    }
+
+    private boolean isMatch() {
+        return match;
+    }
+
+    private void setMatch(boolean match) {
+        this.match = match;
+    }
+
+    private Card getCard1() {
+        return card1;
+    }
+
+    private void setCard1(Card card1) {
+        this.card1 = card1;
+    }
+
+    private Card getCard2() {
+        return card2;
+    }
+
+    private void setCard2(Card card2) {
+        this.card2 = card2;
+    }
+
+    private int getCurrentPlayer() {
+        return currentPlayer;
+    }
+
+    private void setCurrentPlayer(int currentPlayer) {
+        this.currentPlayer = currentPlayer;
+    }
+
+    private int getPlayer1() {
+        return player1;
+    }
+
+    private void setPlayer1(int player1) {
+        this.player1 = player1;
+    }
+
+    private int getPlayer2() {
+        return player2;
+    }
+
+    private void setPlayer2(int player2) {
+        this.player2 = player2;
+    }
+
+    private byte getScore1() {
+        return score1;
+    }
+
+    private void setScore1(byte score1) {
+        this.score1 = score1;
+    }
+
+    private byte getScore2() {
+        return score2;
+    }
+
+    private void setScore2(byte score2) {
+        this.score2 = score2;
+    }
+    
+    
    
     public Object newGame() {
         //String message = object.toString();
@@ -21,33 +109,10 @@ public class Game {
         takeTurns();
         return null;
    
-    }
+    }    
     
     
-    boolean match;
-    Card card1;
-    Card card2;
-    int currentPlayer; 
-    int player1 = 1; 
-    int player2 = 2;
-    byte score1=0;
-    byte score2=0;
-    
-    /*
-    I think the main part of the game will be inside another loop. Something
-    like: while (! winnerFound) { ... } then when you find the winner, set that 
-    boolean to true and you'll exit the loop. Then just print out the winner and
-    it will be done.
-    */
-    
-    /*
-    One way you could approach the two loops would be to have another temporary 
-    variable that holds the current player. At the beginning, currentPlayer = player1. 
-    If current player makes a match, then don't change the player. Otherwise, 
-    set currentPlayer to player2. Then just loop over that until there's no more cards.
-    */
-    
-    public void takeTurns(){
+    private void takeTurns(){
         
         int totalScore=score1+score2;
         currentPlayer = player1;
@@ -100,40 +165,7 @@ public class Game {
         gamePreferenceMenu.getInput();
     }
     
-    /*
-    }ORIGINAL CODE
-    public void takeTurns(){
-        int totalScore=(score1+score2);
-        //this might have to turn into a switch statment in order to give the 
-        //player another turn.
-        while (totalScore<18){
-            System.out.println("Player1's Turn");
-            card1 = selectCard();
-            card2 = selectCard();
-            match = checkMatch();
-            if (match==true){
-                score1++;
-                if (totalScore==18){
-                    break;
-                }
-                //else{give player1 another turn
-                //start from the println}
-            }
-            currentPlayer = player2;
-            System.out.println("Player2's Turn");
-            card1 = selectCard();
-            card2 = selectCard();
-            match = checkMatch();
-            if (match==true){
-                score1++;
-                if (totalScore==18){
-                    break;
-                }
-                //else{give player2 another turn
-                //start from the println}
-            }    
-        }*/
-
+    
  private Card selectCard(){
         
       
@@ -172,11 +204,7 @@ public class Game {
         }// end while
         return card;
                
-    }
-
-        
-    
-        
+    }        
 
         private boolean checkMatch(Card card1, Card card2){
        
@@ -195,3 +223,49 @@ public class Game {
     }
         
 }
+/*
+    I think the main part of the game will be inside another loop. Something
+    like: while (! winnerFound) { ... } then when you find the winner, set that 
+    boolean to true and you'll exit the loop. Then just print out the winner and
+    it will be done.
+    */
+    
+    /*
+    One way you could approach the two loops would be to have another temporary 
+    variable that holds the current player. At the beginning, currentPlayer = player1. 
+    If current player makes a match, then don't change the player. Otherwise, 
+    set currentPlayer to player2. Then just loop over that until there's no more cards.
+    */
+/*
+    }ORIGINAL CODE
+    public void takeTurns(){
+        int totalScore=(score1+score2);
+        //this might have to turn into a switch statment in order to give the 
+        //player another turn.
+        while (totalScore<18){
+            System.out.println("Player1's Turn");
+            card1 = selectCard();
+            card2 = selectCard();
+            match = checkMatch();
+            if (match==true){
+                score1++;
+                if (totalScore==18){
+                    break;
+                }
+                //else{give player1 another turn
+                //start from the println}
+            }
+            currentPlayer = player2;
+            System.out.println("Player2's Turn");
+            card1 = selectCard();
+            card2 = selectCard();
+            match = checkMatch();
+            if (match==true){
+                score1++;
+                if (totalScore==18){
+                    break;
+                }
+                //else{give player2 another turn
+                //start from the println}
+            }    
+        }*/
