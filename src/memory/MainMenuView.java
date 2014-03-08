@@ -15,14 +15,28 @@ import java.util.Scanner;
 public class MainMenuView implements Serializable{
     
     
-    private static final String[][] menuItems = {
+    private static String[][] menuItems = {
     
         {"N", "New Game"},
         {"H", "Help"},
         {"X", "Exit Memory"},
     };
+
+    /**
+     * @return the menuItems
+     */
+    public static String[][] getMenuItems() {
+        return menuItems;
+    }
+
+    /**
+     * @param aMenuItems the menuItems to set
+     */
+    public static void setMenuItems(String[][] aMenuItems) {
+        menuItems = aMenuItems;
+    }
     
-    MainMenuControl mainMenuControl = new MainMenuControl();
+    private MainMenuControl mainMenuControl = new MainMenuControl();
     
     public MainMenuView() {
         
@@ -40,10 +54,10 @@ public class MainMenuView implements Serializable{
             
             switch (command) {
                 case "N":
-                    this.mainMenuControl.displayGamePreferenceMenu();
+                    this.getMainMenuControl().displayGamePreferenceMenu();
                     break;
                 case "H": 
-                    this.mainMenuControl.displayHelpMenu();
+                    this.getMainMenuControl().displayHelpMenu();
                     break;
                 case "X":
                     break;
@@ -59,9 +73,23 @@ public class MainMenuView implements Serializable{
         System.out.println("\n\t================================================");
         System.out.println("\tEnter the letter associated with one of the following commands:");
         
-        for(int i=0; i< MainMenuView.menuItems.length; i++) {
-            System.out.println("\t  " + MainMenuView.menuItems[i][0] + "\t" + MainMenuView.menuItems[i][1]);
+        for(int i=0; i< MainMenuView.getMenuItems().length; i++) {
+            System.out.println("\t  " + MainMenuView.getMenuItems()[i][0] + "\t" + MainMenuView.getMenuItems()[i][1]);
         }
         System.out.println("\t===================================================");
+    }
+
+    /**
+     * @return the mainMenuControl
+     */
+    public MainMenuControl getMainMenuControl() {
+        return mainMenuControl;
+    }
+
+    /**
+     * @param mainMenuControl the mainMenuControl to set
+     */
+    public void setMainMenuControl(MainMenuControl mainMenuControl) {
+        this.mainMenuControl = mainMenuControl;
     }
 }

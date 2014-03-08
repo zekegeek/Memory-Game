@@ -85,7 +85,7 @@ public class GetLocationView {
             int column = Integer.parseInt(coordinates[1]);
             
             // get the game board         
-            Board board = this.game.board; 
+            Board board = this.getGame().board; 
             
             // Check for invalid row and column entered
             if (row < 1   ||  row > board.getRowCount() ||
@@ -111,5 +111,19 @@ public class GetLocationView {
             */
         }        
         return location;             
+    }
+
+    /**
+     * @return the game
+     */
+    public Game getGame() {
+        return game;
+    }
+
+    /**
+     * @param game the game to set
+     */
+    public void setGame(Game game) {
+        this.game = game;
     }
 }

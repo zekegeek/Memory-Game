@@ -13,13 +13,27 @@ import java.util.Scanner;
  * @author Cook
  */
 public class HelpMenuView {
-    private final static String[][] menuItems = {
+    private static String[][] menuItems = {
         {"R", "Resume Game"},
         {"M", "Quit and go to Main Menu"},
         {"A", "About Memory"},
         {"B", "Board Overview"},
         {"H", "How to Play"}            
     };
+
+    /**
+     * @return the menuItems
+     */
+    public static String[][] getMenuItems() {
+        return menuItems;
+    }
+
+    /**
+     * @param aMenuItems the menuItems to set
+     */
+    public static void setMenuItems(String[][] aMenuItems) {
+        menuItems = aMenuItems;
+    }
     //create instance of the HelpMenuControl (action) class
     private HelpMenuControl helpMenuControl = new HelpMenuControl();
     
@@ -42,16 +56,16 @@ public class HelpMenuView {
                 case "R":
                     break;
                 case "M":
-                    this.helpMenuControl.displayMainMenu();
+                    this.getHelpMenuControl().displayMainMenu();
                     break;
                 case "A":
-                    this.helpMenuControl.diplayGameHelp();
+                    this.getHelpMenuControl().diplayGameHelp();
                     break;
                 case "B":
-                    this.helpMenuControl.displayBoardHelp();
+                    this.getHelpMenuControl().displayBoardHelp();
                     break;
                 case "H":
-                    this.helpMenuControl.displayPlayerHelp();
+                    this.getHelpMenuControl().displayPlayerHelp();
                     break;
                 default:
                     System.out.println("Invalid command. Please enter a valid command.");
@@ -64,9 +78,23 @@ public class HelpMenuView {
     public final void display(){
         System.out.println("\n\t==========================================");
         System.out.println("\tEnter the letter associated with one of the following commands:");
-        for (int i=0; i < HelpMenuView.menuItems.length; i++){
-            System.out.println("\t   " + menuItems[i][0] + "\t" + menuItems[i][1]);
+        for (int i=0; i < HelpMenuView.getMenuItems().length; i++){
+            System.out.println("\t   " + getMenuItems()[i][0] + "\t" + getMenuItems()[i][1]);
         }
         System.out.println("\t==========================================");            
+    }
+
+    /**
+     * @return the helpMenuControl
+     */
+    public HelpMenuControl getHelpMenuControl() {
+        return helpMenuControl;
+    }
+
+    /**
+     * @param helpMenuControl the helpMenuControl to set
+     */
+    public void setHelpMenuControl(HelpMenuControl helpMenuControl) {
+        this.helpMenuControl = helpMenuControl;
     }
 }
