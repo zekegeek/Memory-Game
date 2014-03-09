@@ -7,6 +7,7 @@
 package memory;
 
 import java.util.Scanner;
+import java.io.Serializable;
 
 /**
  *
