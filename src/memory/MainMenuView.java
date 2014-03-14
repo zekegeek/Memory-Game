@@ -40,8 +40,7 @@ public class MainMenuView extends Menu {
             switch (command){
                 case "N":
                     GamePreferenceView gamePref = new GamePreferenceView();
-                    gamePref.getInput();//get rid of when GamePreferenceView is done
-                    //gamePref.executeCommands(null);
+                    gamePref.executeCommands(null);
                     break;
                 case "H": 
                     HelpMenuView helpMenu = new HelpMenuView();
