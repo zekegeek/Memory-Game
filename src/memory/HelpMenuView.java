@@ -45,7 +45,8 @@ public class HelpMenuView extends Menu {
                 case "R":
                     break;
                 case "M":
-                    this.displayHelp()displayMainMenu();
+                    MainMenuView mainMenu = Memory.getMainMenu
+                    mainMenu.executeCommands(null)
                     break;
                 case "G":
                     this.displayHelp(HelpMenuView.GAME);

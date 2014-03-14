@@ -21,16 +21,7 @@ public class MainMenuView extends Menu {
         {"X", "Exit Memory"},
     };
     
-    /*
-    //@return the menuItems    
-    public static String[][] getMenuItems() {
-        return menuItems;
-    }    
-    //@param aMenuItems the menuItems to set    
-    public static void setMenuItems(String[][] aMenuItems) {
-        menuItems = aMenuItems;
-    }
-    */
+
     
     MainMenuControl mainMenuControl = new MainMenuControl();
     
@@ -87,18 +78,29 @@ public class MainMenuView extends Menu {
         }
         System.out.println("\t===================================================");
     }
-
-    /**
-     * @return the mainMenuControl
-     */
+/*
+    
+    //@return the mainMenuControl
+    
     public MainMenuControl getMainMenuControl() {
         return mainMenuControl;
     }
 
-    /**
-     * @param mainMenuControl the mainMenuControl to set
-     */
+    
+    //@param mainMenuControl the mainMenuControl to set
+    
     public void setMainMenuControl(MainMenuControl mainMenuControl) {
         this.mainMenuControl = mainMenuControl;
     }
 }
+
+    
+    //@return the menuItems    
+    public static String[][] getMenuItems() {
+        return menuItems;
+    }    
+    //@param aMenuItems the menuItems to set    
+    public static void setMenuItems(String[][] aMenuItems) {
+        menuItems = aMenuItems;
+    }
+    */

@@ -16,7 +16,7 @@ public class HelpMenuControl {
 }
     public void displayMainMenu() {
         MainMenuView mainMenu = new MainMenuView();
-        mainMenu.getInput();
+        //mainMenu.getInput(); //taken out 3/13/2014 to get rid of error when menu superclass was created
     }
     
     public void displayBoardHelp() {
