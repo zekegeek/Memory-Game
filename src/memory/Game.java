@@ -118,7 +118,7 @@ public class Game implements Serializable{
         setCurrentPlayer(getPlayer1());
         int currentScore = getScore1();
         
-        while (totalScore<(board.getBoardSize()/2)){
+        while (totalScore!=(board.getBoardSize()/2)){
             System.out.println(getCurrentPlayer()+"'s Turn");
             board.displayBoard();
             card1 = selectCard();

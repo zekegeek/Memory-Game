@@ -6,13 +6,12 @@
 
 package memory;
 
-import java.io.Serializable;
 import java.util.Scanner;
 /**
  *
  * @author Catherine
  */
-public class MainMenuView implements Serializable{
+public class MainMenuView extends Menu {
     
     
     private static String[][] menuItems = {
@@ -21,25 +20,35 @@ public class MainMenuView implements Serializable{
         {"H", "Help"},
         {"X", "Exit Memory"},
     };
-
-    /**
-     * @return the menuItems
-     */
+    
+    /*
+    //@return the menuItems    
     public static String[][] getMenuItems() {
         return menuItems;
-    }
-
-    /**
-     * @param aMenuItems the menuItems to set
-     */
+    }    
+    //@param aMenuItems the menuItems to set    
     public static void setMenuItems(String[][] aMenuItems) {
         menuItems = aMenuItems;
     }
+    */
     
-    private MainMenuControl mainMenuControl = new MainMenuControl();
+    MainMenuControl mainMenuControl = new MainMenuControl();
     
     public MainMenuView() {
-        
+        super(MainMenuView.menuItems);
+    }
+    @Override
+    
+    public String executeCommands(Object object){
+        //String gameStatus = Game.PLAYING;
+        do{
+            this.display();
+            //get command
+            String command = this.getCommand();
+            switch (command){
+                
+            }
+        }
     }
     public void getInput() {
         
