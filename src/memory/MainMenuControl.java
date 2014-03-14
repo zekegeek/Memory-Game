@@ -22,7 +22,7 @@ public class MainMenuControl implements Serializable{
 
      public void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.getInput();
+        //helpMenu.getInput();
     }
      
      public void exit() {

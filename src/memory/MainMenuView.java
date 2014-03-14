@@ -37,10 +37,33 @@ public class MainMenuView extends Menu {
             //get command
             String command = this.getCommand();
             switch (command){
-                
+                case "N":
+                    GamePreferenceView gamePref = new GamePreferenceView();
+                    gamePref.getInput();
+                    //gamePref.executeCommands(null);
+                    break;
+                case "H": 
+                    HelpMenuView helpMenu = new HelpMenuView();
+                    helpMenu.executeCommands(null);
+                case "X":
+                    //return Game.EXIT;
+                    break;//will be removed with previous line executes
+                default: 
+                    System.out.println("Invalid command. Please enter"
+                            + "a valid command.");
+                    continue;
             }
+        } while (!command.equals("X"));
+        return;
+    }
+    
+        StringBuilder dividerLine = new StringBuilder(80);{
+        for (int i = 0; i < 80; i++) {
+            dividerLine.insert(i, '=');
         }
     }
+}
+   /*  
     public void getInput() {
         
         String command;
@@ -54,13 +77,16 @@ public class MainMenuView extends Menu {
             
             switch (command) {
                 case "N":
-                    this.getMainMenuControl().displayGamePreferenceMenu();
+                    GamePreferenceView gamePref = new GamePreferenceView();
+                    gamePref.getInput();
+                    //gamePref.executeCommands(null);
                     break;
                 case "H": 
-                    HelpMenuView helpMenu = Memory.getHelpMenu();
+                    HelpMenuView helpMenu = new HelpMenuView();
                     helpMenu.executeCommands(null);
                 case "X":
-                    break;
+                    //return Game.EXIT;
+                    break;//will be removed with previous line executes
                 default: 
                     System.out.println("Invalid command. Please enter"
                             + "a valid command.");
@@ -68,7 +94,11 @@ public class MainMenuView extends Menu {
             }
         } while (!command.equals("X"));
         return;
-    }
+    }*/
+    
+
+    
+ /*   
     public final void display() {
         System.out.println("\n\t================================================");
         System.out.println("\tEnter the letter associated with one of the following commands:");
@@ -78,7 +108,7 @@ public class MainMenuView extends Menu {
         }
         System.out.println("\t===================================================");
     }
-/*
+
     
     //@return the mainMenuControl
     
