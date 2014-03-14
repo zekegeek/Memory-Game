@@ -33,7 +33,7 @@ public class HelpMenuView extends Menu {
     
     //display help menu and get input
     @Override
-    public String executeCommands(Object object) {
+    public void executeCommands(Object object) {
         String command;
         do{
             this.display();//display menu

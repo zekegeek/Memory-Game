@@ -22,7 +22,7 @@ public abstract class Menu {
         this.menuItems = menuItems;
     }
     
-    public abstract String executeCommands (Object object);
+    public abstract void executeCommands (Object object);
     
     public String[][] getMenuItems() {
         return menuItems;

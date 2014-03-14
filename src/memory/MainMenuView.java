@@ -30,12 +30,13 @@ public class MainMenuView extends Menu {
     }
     @Override
     
-    public String executeCommands(Object object){
+    public void executeCommands(Object object){
         //String gameStatus = Game.PLAYING;
+        String command;
         do{
             this.display();
             //get command
-            String command = this.getCommand();
+            command = this.getCommand();
             switch (command){
                 case "N":
                     GamePreferenceView gamePref = new GamePreferenceView();
@@ -54,6 +55,7 @@ public class MainMenuView extends Menu {
                     continue;
             }
         } while (!command.equals("X"));
+        
         return;
     }
     
