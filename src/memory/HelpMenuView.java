@@ -13,8 +13,8 @@ import java.io.Serializable;
  *
  * @author Cook
  */
-public class HelpMenuView {
-    private static String[][] menuItems = {
+public class HelpMenuView extends Menu {
+    private final static String[][] menuItems = {
         {"R", "Resume Game"},
         {"M", "Quit and go to Main Menu"},
         {"A", "About Memory"},
@@ -39,19 +39,19 @@ public class HelpMenuView {
     private HelpMenuControl helpMenuControl = new HelpMenuControl();
     
     public HelpMenuView(){
-        
+        super(HelpMenuView.menuItems);
     }
     
     //display help menu and get input
-    public void getInput(){
-        String command;
-        Scanner inFile = new Scanner(System.in);
+    //public void getInput(){
+    @Override
+    public String executeCommands(Object object) {
         
         do{
             this.display();//display menu
             //user input
-            command = inFile.nextLine();
-            command = command.trim().toUpperCase();
+        String command;
+        Scanner inFile = new Scanner(System.in);
             
             switch (command){
                 case "R":
