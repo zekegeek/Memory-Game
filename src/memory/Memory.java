@@ -33,7 +33,7 @@ public class Memory {
         myGame.getName() ;
         myGame.displayHelp();
         MainMenuView mainMenu = new MainMenuView();
-        mainMenu.executeCommands(null);
+        mainMenu.executeCommands();
         
         }
     

@@ -160,9 +160,9 @@ public class Game implements Serializable{
                     +"Game Over.\nIt's a Tie!"
                     +"\n\t*******************************************************************************");            
         }
-        Game game = new Game();
+        /*Game game = new Game();
         GamePreferenceView gamePreferenceMenu = new GamePreferenceView(game);
-        gamePreferenceMenu.getInput();
+        gamePreferenceMenu.getInput();*/
     }
     
     

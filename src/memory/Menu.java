@@ -14,15 +14,16 @@ import java.util.Scanner;
  */
 public abstract class Menu {
    
-    private String[][] menuItems = null;
+    protected String[][] menuItems = null;
     public Menu() {
     }
     public Menu(String[][] menuItems) {
         this();
         this.menuItems = menuItems;
+        if (menuItems == null) System.out.println("it's totally null, dude.");
     }
     
-    public abstract void executeCommands (Object object);
+    public abstract void executeCommands ();
     
     public String[][] getMenuItems() {
         return menuItems;
@@ -35,13 +36,14 @@ public abstract class Menu {
         System.out.println("\n\t===============================================================");
         System.out.println("\tEnter the letter associated with one of the following commands:");
 
+        //if (menuItems == null) System.out.println("it's totally null, dude.");
         for (int i = 0; i < this.menuItems.length; i++) {
             System.out.println("\t   " + menuItems[i][0] + "\t" + menuItems[i][1]);
         }
         System.out.println("\t===============================================================\n");
     }
 
-    private boolean validCommand(String command) {
+    protected boolean validCommand(String command) {
         String[][] items = this.menuItems;
 
         for (String[] item : this.menuItems) {

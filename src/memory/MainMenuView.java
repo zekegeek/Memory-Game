@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class MainMenuView extends Menu {
     
     
-    private static String[][] menuItems = {
+    private static final String[][] menuItems = {
     
         {"N", "New Game"},
         {"H", "Help"},
@@ -30,7 +30,7 @@ public class MainMenuView extends Menu {
     }
     @Override
     
-    public void executeCommands(Object object){
+    public void executeCommands(){
         //String gameStatus = Game.PLAYING;
         String command;
         do{
@@ -40,11 +40,11 @@ public class MainMenuView extends Menu {
             switch (command){
                 case "N":
                     GamePreferenceView gamePref = new GamePreferenceView();
-                    gamePref.executeCommands(null);
+                    gamePref.executeCommands();
                     break;
                 case "H": 
                     HelpMenuView helpMenu = new HelpMenuView();
-                    helpMenu.executeCommands(null);
+                    helpMenu.executeCommands();
                 case "X":
                     //return Game.EXIT;
                     break;//will be removed with previous line executes

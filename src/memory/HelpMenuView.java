@@ -33,7 +33,7 @@ public class HelpMenuView extends Menu {
     
     //display help menu and get input
     @Override
-    public void executeCommands(Object object) {
+    public void executeCommands() {
         String command;
         do{
             this.display();//display menu
@@ -46,7 +46,7 @@ public class HelpMenuView extends Menu {
                     break;
                 case "M":
                     MainMenuView mainMenu = new MainMenuView();
-                    mainMenu.executeCommands(null);
+                    mainMenu.executeCommands();
                     break;
                 case "G":
                     this.displayHelp(HelpMenuView.GAME);

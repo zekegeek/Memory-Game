@@ -13,24 +13,30 @@ import java.util.Scanner;
  *
  * @author Cook
  */
-public class GamePreferenceView implements Serializable{
+public class GamePreferenceView extends Menu {
     Game game;
     
-    private final GamePreferenceControl gamePreferenceControl = new GamePreferenceControl(game);
+    //private final GamePreferenceControl gamePreferenceControl = new GamePreferenceControl();
 
-    private final static String[][] menuItems = {
+    protected static final String[][] menuItems = {
         {"S", "Start Game"},
-        {"P", "Change the Number of Players"},//needs to display current # of players
+        /*{"P", "Change the Number of Players"},//needs to display current # of players
         {"M", "Change the Number of Matches"},//needs to display current # of matches
-        {"D", "Change the Dimensions of the Board"},//Maybe give two options for each number of matches???
+        {"D", "Change the Dimensions of the Board"},//Maybe give two options for each number of matches???*/
         {"Q", "Return to Main Menu"}
     };
     
-    public GamePreferenceView(Game game){
+    /*public GamePreferenceView(Game game){
         this.game = game;
+    }*/
+    
+       public GamePreferenceView() {
+        super(GamePreferenceView.menuItems);
     }
     
-    public void getInput(){
+    @Override
+    
+    public void executeCommands(){
         String command;
         Scanner inFile = new Scanner(System.in);
         do{
@@ -39,9 +45,10 @@ public class GamePreferenceView implements Serializable{
             command = command.trim().toUpperCase();
             switch (command){
                 case "S":
-                    this.gamePreferenceControl.getGame();
+                    game= new Game();
+                    game.newGame();
                     break;
-                case "P":
+               /* case "P":
                     this.gamePreferenceControl.getPlayers();
                     break;
                 case "M":
@@ -49,7 +56,7 @@ public class GamePreferenceView implements Serializable{
                     break;
                 case "D":
                     this.gamePreferenceControl.getDimentions();
-                    break;
+                    break;*/
                 default:
                     System.out.println("Invalid Command. Please enter a valid command.");
                     continue;
@@ -57,6 +64,7 @@ public class GamePreferenceView implements Serializable{
         }while (!command.equals("Q"));
     }
     
+    /*
     public final void display() {
         System.out.println("\n\t===============================================================");
         System.out.println("\tEnter the letter associated with one of the following commands:");
@@ -65,5 +73,5 @@ public class GamePreferenceView implements Serializable{
             System.out.println("\t " + menuItems[i][0] + "\t" + menuItems[i][1]);
         }
         System.out.println("\t===============================================================\n");
-    }    
+    } */   
 }

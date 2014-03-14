@@ -16,8 +16,8 @@ import java.util.Scanner;
 public class MainMenuControl implements Serializable{
     public void displayGamePreferenceMenu() {
         Game game = new Game();
-        GamePreferenceView gamePreferenceMenu = new GamePreferenceView(game);
-        gamePreferenceMenu.getInput();
+        GamePreferenceView gamePreferenceMenu = new GamePreferenceView();
+        gamePreferenceMenu.executeCommands();
     }
 
      public void displayHelpMenu() {
