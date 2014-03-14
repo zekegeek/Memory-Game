@@ -10,14 +10,40 @@ package memory;
  *
  * @author geojson
  */
-public class Menu {
-    boolean active;
-    
+public abstract class Menu {
+    /*
     public Menu() {
     }
     
-    void isActive() {
-        System.out.println("\n\tThe menu is" + active);
-        
+    public Menu(String[][] menuItems) {
     }
+    
+    public String[][] getMenuItems() {
+    }
+    
+    public void setMenuItems(String[][] menuItems) {
+    }
+    protected final void display() {
+    }
+    private boolean validCommand(String command) {
+    }
+    protected final */
+    private String[][] menuItems = null;
+    public Menu() {
+    }
+    public Menu(String[][] menuItems) {
+        this();
+        this.menuItems = menuItems;
+    }
+    
+    public abstract String executeCommands (Object object);
+    
+    public String[][] getMenuItems() {
+        return menuItems;
+    }
+    
+    public void setMenuItems(String[][] menuItems) {
+        this.menuItems = menuItems;
+    }
+    
 }
