@@ -176,31 +176,32 @@ public class Game implements Serializable{
         Scanner input = new Scanner(System.in);
         boolean validCard = false;
         
-        while (validCard==false)
+        if (validCard==false)
         {
-        System.out.println("Enter a row number for the card:");
-        row = input.nextInt();
-        while (row < 0 || row > (board.getRowCount() -1)){
-          System.out.println("That is not a valid number."
-                  + "\nPlease enter a value between 0 and "+ (board.getRowCount() -1));
-        }
-        
-        System.out.println("Enter a column number for the card:");
-        column = input.nextInt();
-        while (column < 0 || column > (board.getColumnCount() -1)){
-          System.out.println("That is not a valid number."
-                  + "\nPlease enter a value between 1 and "+(board.getColumnCount() -1));
-        }
-      
-       card = board.getCard(row, column);
-        
-        if(card.isMatched())
-        {
-            System.out.println("That card has already been chosen"
-                  + "\nPlease try a different card");
-            break;
-        }
-        else validCard = true;
+            System.out.println("Enter a row number for the card:");
+            row = input.nextInt();
+            while (row < 0 || row > (board.getRowCount() -1)){
+                System.out.println("That is not a valid number."
+                        + "\nPlease enter a value between 0 and "+ (board.getRowCount() -1));
+            }
+            
+            System.out.println("Enter a column number for the card:");
+            column = input.nextInt();
+            while (column < 0 || column > (board.getColumnCount() -1)){
+                System.out.println("That is not a valid number."
+                        + "\nPlease enter a value between 1 and "+(board.getColumnCount() -1));
+            }
+            
+            card = board.getCard(row, column);
+            
+            if(card.isMatched())
+            {
+                System.out.println("That card has already been chosen"
+                        + "\nPlease try a different card");
+                //break;
+            }
+            else validCard = true;
+        } else {
         }// end while
         return card;
                

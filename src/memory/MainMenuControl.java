@@ -6,6 +6,8 @@
 
 package memory;
 
+import cit260.team11.memory.menus.GamePreferenceView;
+import cit260.team11.memory.menus.HelpMenuView;
 import java.io.Serializable;
 import java.util.Scanner;
 

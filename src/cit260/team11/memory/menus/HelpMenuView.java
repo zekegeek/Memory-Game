@@ -4,9 +4,10 @@
  * and open the template in the editor.
  */
 
-package memory;
+package cit260.team11.memory.menus;
 
 import java.util.Scanner;
+import memory.Menu;
 
 /**
  *

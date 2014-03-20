@@ -4,10 +4,12 @@
  * and open the template in the editor.
  */
 
-package memory;
+package cit260.team11.memory.menus;
 
 import java.awt.Point;
 import java.util.Scanner;
+import memory.Board;
+import memory.Game;
 
 /**
  *
