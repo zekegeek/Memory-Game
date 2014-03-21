@@ -6,6 +6,9 @@
 
 package cit260.team11.memory.menus;
 
+import cit260.memory.interfaces.EnterInfo;
+import cit260.team11.memory.enums.Status;
+import static cit260.team11.memory.enums.Status.PLAYING;
 import java.util.Scanner;
 import memory.MainMenuControl;
 import memory.Menu;
@@ -13,7 +16,7 @@ import memory.Menu;
  *
  * @author Catherine
  */
-public class MainMenuView extends Menu {
+public class MainMenuView extends Menu implements EnterInfo{
     
     
     private static final String[][] menuItems = {
@@ -30,11 +33,11 @@ public class MainMenuView extends Menu {
     public MainMenuView() {
         super(MainMenuView.menuItems);
     }
-    @Override
     
-    public void executeCommands(){
+    public Status getInput(Object object){
         //String gameStatus = Game.PLAYING;
         String command;
+        String status = "PLAYING";
         do{
             this.display();
             //get command
@@ -57,7 +60,7 @@ public class MainMenuView extends Menu {
             }
         } while (!command.equals("X"));
         
-        return;
+        return PLAYING;
     }
     
         StringBuilder dividerLine = new StringBuilder(80);{
@@ -65,6 +68,11 @@ public class MainMenuView extends Menu {
             dividerLine.insert(i, '=');
         }
     }
+
+    @Override
+    public void executeCommands() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }   
 }
    /*  
     public void getInput() {

@@ -6,6 +6,9 @@
 
 package cit260.team11.memory.menus;
 
+import cit260.memory.interfaces.EnterInfo;
+import cit260.team11.memory.enums.Status;
+import static cit260.team11.memory.enums.Status.PLAYING;
 import java.util.Scanner;
 import memory.Menu;
 
@@ -13,7 +16,7 @@ import memory.Menu;
  *
  * @author Cook
  */
-public class HelpMenuView extends Menu {
+public class HelpMenuView extends Menu implements EnterInfo {
     public static final String BOARD = "BOARD";
     public static final String GAME = "GAME";
     public static final String PLAYER = "PLAYER";
@@ -34,8 +37,9 @@ public class HelpMenuView extends Menu {
     
     //display help menu and get input
     @Override
-    public void executeCommands() {
+    public Status getInput(Object object) {
         String command;
+        Status status = Status.PLAYING;
         do{
             this.display();//display menu
             //user input
@@ -64,7 +68,7 @@ public class HelpMenuView extends Menu {
             }
         }
         while(!command.equals("R")||!command.equals("M"));
-        return;
+        return PLAYING;
     }
     
     private void displayHelp(String helpType){
@@ -104,6 +108,11 @@ public class HelpMenuView extends Menu {
         System.out.println("\t" + dividerLine.toString());
         System.out.println(helpText);
         System.out.println("\t" + dividerLine.toString());
+    }
+
+    @Override
+    public void executeCommands() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
    

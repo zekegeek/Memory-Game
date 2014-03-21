@@ -6,6 +6,8 @@
 
 package cit260.team11.memory.menus;
 
+import cit260.memory.interfaces.EnterInfo;
+import cit260.team11.memory.enums.Status;
 import java.io.Serializable;
 import java.util.Scanner;
 import memory.Game;
@@ -15,7 +17,7 @@ import memory.Menu;
  *
  * @author Cook
  */
-public class GamePreferenceView extends Menu {
+public class GamePreferenceView extends Menu implements EnterInfo {
     Game game;
     
     //private final GamePreferenceControl gamePreferenceControl = new GamePreferenceControl();
@@ -36,10 +38,11 @@ public class GamePreferenceView extends Menu {
         super(GamePreferenceView.menuItems);
     }
     
-    @Override
-    
-    public void executeCommands(){
+    @Override    
+    public Status getInput(Object object){
+        //status
         String command;
+        String status = "PLAYING";
         Scanner inFile = new Scanner(System.in);
         do{
             this.display();
@@ -63,7 +66,8 @@ public class GamePreferenceView extends Menu {
                     System.out.println("Invalid Command. Please enter a valid command.");
                     continue;
             }
-        }while (!command.equals("Q"));
+        }while (!status.equals("EXIT"));
+        return Status.EXIT;
     }
     
     /*
@@ -76,4 +80,9 @@ public class GamePreferenceView extends Menu {
         }
         System.out.println("\t===============================================================\n");
     } */   
+
+    @Override
+    public void executeCommands() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
