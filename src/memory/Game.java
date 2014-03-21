@@ -34,13 +34,13 @@ public class Game implements Serializable{
         this.board = board;
     }
 
-    private boolean isMatch() {
-        return match;
+    /*private boolean isMatch() {
+      return match;
     }
 
     private void setMatch(boolean match) {
         this.match = match;
-    }
+    }*/
 
     private Card getCard1() {
         return card1;
