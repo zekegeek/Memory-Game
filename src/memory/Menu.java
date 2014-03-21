@@ -7,13 +7,22 @@
 package memory;
 
 import cit260.memory.interfaces.DisplayInfo;
+import cit260.memory.interfaces.EnterInfo;
 import java.util.Scanner;
 
 /**
  *
  * @author Roebuck and Cook
  */
-public abstract class Menu implements DisplayInfo{
+public abstract class Menu implements DisplayInfo, EnterInfo{
+    
+    public interface DisplayInfo {
+        void display();
+}
+    
+    public interface EnterInfo {
+        void display();
+}
    
     protected String[][] menuItems = null;
     public Menu() {
