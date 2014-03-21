@@ -6,13 +6,14 @@
 
 package memory;
 
+import cit260.memory.interfaces.DisplayInfo;
 import java.util.Scanner;
 
 /**
  *
  * @author Roebuck and Cook
  */
-public abstract class Menu {
+public abstract class Menu implements DisplayInfo{
    
     protected String[][] menuItems = null;
     public Menu() {
@@ -32,7 +33,7 @@ public abstract class Menu {
     public void setMenuItems(String[][] menuItems) {
         this.menuItems = menuItems;
     }
-    public final void display() {
+    public void display() {
         System.out.println("\n\t===============================================================");
         System.out.println("\tEnter the letter associated with one of the following commands:");
 
