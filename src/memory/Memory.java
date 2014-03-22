@@ -34,7 +34,7 @@ public class Memory {
         myGame.getName() ;
         myGame.displayHelp();
         MainMenuView mainMenu = new MainMenuView();
-        mainMenu.executeCommands();
+        mainMenu.getInput(null);
         
         }
     

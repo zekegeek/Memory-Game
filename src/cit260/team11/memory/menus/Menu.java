@@ -4,10 +4,10 @@
  * and open the template in the editor.
  */
 
-package memory;
+package cit260.team11.memory.menus;
 
-import cit260.memory.interfaces.DisplayInfo;
-import cit260.memory.interfaces.EnterInfo;
+import cit260.team11.memory.interfaces.DisplayInfo;
+import cit260.team11.memory.interfaces.EnterInfo;
 import java.util.Scanner;
 
 /**
@@ -33,7 +33,7 @@ public abstract class Menu implements DisplayInfo, EnterInfo{
         if (menuItems == null) System.out.println("it's totally null, dude.");
     }
     
-    public abstract void executeCommands ();
+    /*public abstract void executeCommands ();*/
     
     public String[][] getMenuItems() {
         return menuItems;

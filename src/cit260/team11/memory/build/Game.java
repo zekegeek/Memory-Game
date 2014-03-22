@@ -120,7 +120,7 @@ public class Game implements Serializable{
         
         while (totalScore!=(board.getBoardSize()/2)){
             System.out.println(getCurrentPlayer()+"'s Turn");
-            board.displayBoard();
+            board.display();
             card1 = selectCard();
             System.out.println("this card is: " + card1.getName());
             card2 = selectCard();

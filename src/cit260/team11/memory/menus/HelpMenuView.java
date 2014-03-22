@@ -6,11 +6,10 @@
 
 package cit260.team11.memory.menus;
 
-import cit260.memory.interfaces.EnterInfo;
+import cit260.team11.memory.interfaces.EnterInfo;
 import cit260.team11.memory.enums.Status;
 import static cit260.team11.memory.enums.Status.PLAYING;
 import java.util.Scanner;
-import memory.Menu;
 
 /**
  *
@@ -51,7 +50,7 @@ public class HelpMenuView extends Menu implements EnterInfo {
                     break;
                 case "M":
                     MainMenuView mainMenu = new MainMenuView();
-                    mainMenu.executeCommands();
+                    mainMenu.getInput(null);
                     break;
                 case "G":
                     this.displayHelp(HelpMenuView.GAME);
@@ -110,10 +109,10 @@ public class HelpMenuView extends Menu implements EnterInfo {
         System.out.println("\t" + dividerLine.toString());
     }
 
-    @Override
+/*    @Override
     public void executeCommands() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    }*/
 }
    
     /*

@@ -10,10 +10,13 @@ package cit260.team11.memory.build;
  *
  * @author geojson
  */
+import cit260.team11.memory.interfaces.DisplayInfo;
+import cit260.team11.memory.interfaces.EnterInfo;
 import java.io.Serializable;
 import java.util.Random;
 import java.util.Scanner;
-public class Board implements Serializable{
+
+public class Board implements Serializable, EnterInfo, DisplayInfo { 
     private Scanner in = new Scanner(System.in);
     private int columnCount = 4;
     private int rowCount = 4;
@@ -24,12 +27,12 @@ public class Board implements Serializable{
     private int [][] shuffleBoard;
     
  public Board() {
-     createBoard();
+     getInput();
      createCards();
      nameCards();
     }
     
- public void createBoard() {
+ public void getInput() {
      System.out.println("Please enter the number of rows you would like, " +
 "between 1 and 8.");
         setRowCount(getIn().nextInt());
@@ -63,7 +66,7 @@ public class Board implements Serializable{
         }
        
 
- public void displayBoard() {
+ public void display() {
      System.out.println("Here is your board!:");
      for(int t=0; t<getRowCount(); t++){
         for(int i=0; i<getColumnCount(); i++) {
@@ -229,5 +232,10 @@ public class Board implements Serializable{
      */
     public void setShuffleBoard(int[][] shuffleBoard) {
         this.shuffleBoard = shuffleBoard;
+    }
+
+    @Override
+    public Object getInput(Object object) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

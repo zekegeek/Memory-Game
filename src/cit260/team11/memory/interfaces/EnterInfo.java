@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package cit260.memory.interfaces;
+package cit260.team11.memory.interfaces;
 
 /**
  *

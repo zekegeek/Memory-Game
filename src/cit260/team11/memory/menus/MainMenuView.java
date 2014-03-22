@@ -6,12 +6,11 @@
 
 package cit260.team11.memory.menus;
 
-import cit260.memory.interfaces.EnterInfo;
+import cit260.team11.memory.interfaces.EnterInfo;
 import cit260.team11.memory.enums.Status;
 import static cit260.team11.memory.enums.Status.PLAYING;
 import java.util.Scanner;
 import memory.MainMenuControl;
-import memory.Menu;
 /**
  *
  * @author Catherine
@@ -45,11 +44,11 @@ public class MainMenuView extends Menu implements EnterInfo{
             switch (command){
                 case "N":
                     GamePreferenceView gamePref = new GamePreferenceView();
-                    gamePref.executeCommands();
+                    gamePref.getInput(null);
                     break;
                 case "H": 
                     HelpMenuView helpMenu = new HelpMenuView();
-                    helpMenu.executeCommands();
+                    helpMenu.getInput(null);
                 case "X":
                     //return Game.EXIT;
                     break;//will be removed with previous line executes
@@ -69,10 +68,19 @@ public class MainMenuView extends Menu implements EnterInfo{
         }
     }
 
-    @Override
-    public void executeCommands() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }   
+/*    @Override
+       public void executeCommands() {
+        //String gameStatus = Game.PLAYING;
+
+        do{
+            this.display();
+            //get command
+            String command = this.getCommand();
+            switch (command){
+            }
+
+        }
+    }*/
 }
    /*  
     public void getInput() {

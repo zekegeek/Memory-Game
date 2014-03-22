@@ -6,12 +6,11 @@
 
 package cit260.team11.memory.menus;
 
-import cit260.memory.interfaces.EnterInfo;
+import cit260.team11.memory.interfaces.EnterInfo;
 import cit260.team11.memory.enums.Status;
 import java.io.Serializable;
 import java.util.Scanner;
 import cit260.team11.memory.build.Game;
-import memory.Menu;
 
 /**
  *
@@ -81,8 +80,8 @@ public class GamePreferenceView extends Menu implements EnterInfo {
         System.out.println("\t===============================================================\n");
     } */   
 
-    @Override
+/*    @Override
     public void executeCommands() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    }*/
 }
