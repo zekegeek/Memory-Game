@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package memory;
+package cit260.team11.memory.build;
 
 import java.io.Serializable;
 

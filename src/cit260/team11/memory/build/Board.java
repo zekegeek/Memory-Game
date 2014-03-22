@@ -1,4 +1,4 @@
-package memory;
+package cit260.team11.memory.build;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

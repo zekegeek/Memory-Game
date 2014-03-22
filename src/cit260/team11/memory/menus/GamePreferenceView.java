@@ -10,7 +10,7 @@ import cit260.memory.interfaces.EnterInfo;
 import cit260.team11.memory.enums.Status;
 import java.io.Serializable;
 import java.util.Scanner;
-import memory.Game;
+import cit260.team11.memory.build.Game;
 import memory.Menu;
 
 /**

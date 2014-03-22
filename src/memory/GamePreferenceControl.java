@@ -6,6 +6,7 @@
 
 package memory;
 
+import cit260.team11.memory.build.Game;
 import java.io.Serializable;
 import java.util.Scanner;
 
