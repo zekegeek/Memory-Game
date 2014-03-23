@@ -1,4 +1,4 @@
-package memory;
+package cit260.team11.memory.control;
 
 import cit260.team11.memory.menus.MainMenuView;
 import java.io.Serializable;

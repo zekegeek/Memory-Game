@@ -10,7 +10,7 @@ import cit260.team11.memory.interfaces.EnterInfo;
 import cit260.team11.memory.enums.Status;
 import static cit260.team11.memory.enums.Status.PLAYING;
 import java.util.Scanner;
-import memory.MainMenuControl;
+import cit260.team11.memory.control.MainMenuControl;
 /**
  *
  * @author Catherine
