@@ -81,6 +81,10 @@ protected final String getCommand() {
         
         return command;
     }
+   @Override
+    public void displayError(){
+        System.out.println("Invalid Command. Please enter a valid command.");
+    }
 }
 
  /*

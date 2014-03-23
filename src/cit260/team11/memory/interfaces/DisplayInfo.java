@@ -12,4 +12,5 @@ package cit260.team11.memory.interfaces;
  */
 public interface DisplayInfo {
     void display();
+    void displayError();
 }

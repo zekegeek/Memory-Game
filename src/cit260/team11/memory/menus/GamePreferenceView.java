@@ -16,7 +16,7 @@ import cit260.team11.memory.build.Game;
  *
  * @author Cook
  */
-public class GamePreferenceView extends Menu implements EnterInfo {
+public class GamePreferenceView extends Menu{
     Game game;
     
     //private final GamePreferenceControl gamePreferenceControl = new GamePreferenceControl();
@@ -62,8 +62,9 @@ public class GamePreferenceView extends Menu implements EnterInfo {
                     this.gamePreferenceControl.getDimentions();
                     break;*/
                 default:
-                    System.out.println("Invalid Command. Please enter a valid command.");
+                    displayError();
                     continue;
+
             }
         }while (!status.equals("EXIT"));
         return Status.EXIT;

@@ -15,7 +15,7 @@ import java.util.Scanner;
  *
  * @author Cook
  */
-public class HelpMenuView extends Menu implements EnterInfo {
+public class HelpMenuView extends Menu {
     public static final String BOARD = "BOARD";
     public static final String GAME = "GAME";
     public static final String PLAYER = "PLAYER";
@@ -62,7 +62,7 @@ public class HelpMenuView extends Menu implements EnterInfo {
                     this.displayHelp(HelpMenuView.PLAYER);
                     break;
                 default:
-                    System.out.println("Invalid command. Please enter a valid command.");
+                    displayError();
                     continue;
             }
         }

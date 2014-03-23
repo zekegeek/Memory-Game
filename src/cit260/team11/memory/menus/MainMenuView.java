@@ -15,7 +15,7 @@ import memory.MainMenuControl;
  *
  * @author Catherine
  */
-public class MainMenuView extends Menu implements EnterInfo{
+public class MainMenuView extends Menu{
     
     
     private static final String[][] menuItems = {
@@ -53,8 +53,7 @@ public class MainMenuView extends Menu implements EnterInfo{
                     //return Game.EXIT;
                     break;//will be removed with previous line executes
                 default: 
-                    System.out.println("Invalid command. Please enter"
-                            + "a valid command.");
+                    displayError();
                     continue;
             }
         } while (!command.equals("X"));
@@ -67,6 +66,7 @@ public class MainMenuView extends Menu implements EnterInfo{
             dividerLine.insert(i, '=');
         }
     }
+
 
 /*    @Override
        public void executeCommands() {
