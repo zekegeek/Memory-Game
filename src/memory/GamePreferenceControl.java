@@ -25,7 +25,7 @@ public class GamePreferenceControl implements Serializable{
     
     public Game getGame(){
         if(game == null) game = new Game();
-        game.newGame();
+        game.display();
         return game;
     }
     

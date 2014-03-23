@@ -6,11 +6,12 @@
 
 package cit260.team11.memory.build;
 
+import cit260.team11.memory.interfaces.DisplayInfo;
 import java.io.Serializable;
 import java.util.Scanner;
 
 
-public class Game implements Serializable{
+public class Game implements Serializable, DisplayInfo{
     Board board;
     
     private boolean match;
@@ -100,17 +101,20 @@ public class Game implements Serializable{
     
     
    
-    public Object newGame() {
+    @Override
+    public void display() {
         //String message = object.toString();
         System.out.println("\t-------------------------------------------------------------------------------");
         System.out.println("\tNew Game: ");
         System.out.println("\t-------------------------------------------------------------------------------");
         board = new Board();
-        takeTurns();
-        return null;
-   
+        takeTurns();   
     }    
-    
+        
+    @Override
+    public void displayError(){
+        System.out.println("Invalid Input:");
+    }
     
     private void takeTurns(){
         
@@ -181,15 +185,15 @@ public class Game implements Serializable{
             System.out.println("Enter a row number for the card:");
             row = input.nextInt();
             while (row < 0 || row > (board.getRowCount() -1)){
-                System.out.println("That is not a valid number."
-                        + "\nPlease enter a value between 0 and "+ (board.getRowCount() -1));
+                displayError();
+                System.out.println("Please enter a value between 0 and "+ (board.getRowCount() -1));
             }
             
             System.out.println("Enter a column number for the card:");
             column = input.nextInt();
             while (column < 0 || column > (board.getColumnCount() -1)){
-                System.out.println("That is not a valid number."
-                        + "\nPlease enter a value between 1 and "+(board.getColumnCount() -1));
+                displayError();
+                System.out.println("Please enter a value between 1 and "+(board.getColumnCount() -1));
             }
             
             card = board.getCard(row, column);

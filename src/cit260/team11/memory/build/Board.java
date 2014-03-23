@@ -10,6 +10,7 @@ package cit260.team11.memory.build;
  *
  * @author geojson
  */
+import cit260.team11.memory.enums.Error;
 import cit260.team11.memory.interfaces.DisplayInfo;
 import cit260.team11.memory.interfaces.EnterInfo;
 import java.io.Serializable;
@@ -46,7 +47,7 @@ public class Board implements Serializable, EnterInfo, DisplayInfo {
         setColumnCount(getIn().nextInt());
      while(getColumnCount()<0 || getColumnCount()>7){
         displayError();
-        System.out.println("Please enter a number between 1 and 8");
+        System.out.println("Please enter a number between 1 and 7");
             setColumnCount(getIn().nextInt());
      }
          
@@ -152,6 +153,11 @@ public class Board implements Serializable, EnterInfo, DisplayInfo {
     public void displayError(){
         System.out.println("This is an invalid number");
     }
+    /*@Override
+    public static void displayError(Error error){
+        error.display(ERROR 105);
+    }*/    
+    
     public Card getCard(int row, int column){
     return getBoard()[row][column];
     }
