@@ -76,7 +76,7 @@ protected final String getCommand() throws MenuException {
             command = command.trim().toUpperCase();
             valid = validCommand(command);
             if (!validCommand(command)){
-                throw new MenuException(Error.Error102.getMessage());
+                throw new MenuException(Error.ERROR102.getMessage());
             }
             //if (!validCommand(command)) {
                 //System.out.println("Invalid command: Please enter a valid command.");

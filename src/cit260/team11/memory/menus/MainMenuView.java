@@ -11,6 +11,7 @@ import cit260.team11.memory.enums.Status;
 import static cit260.team11.memory.enums.Status.PLAYING;
 import java.util.Scanner;
 import cit260.team11.memory.control.MainMenuControl;
+import cit260.team11.memory.exceptions.MenuException;
 /**
  *
  * @author Catherine
@@ -38,25 +39,30 @@ public class MainMenuView extends Menu{
         String command;
         String status = "PLAYING";
         do{
-            this.display();
-            //get command
-            command = this.getCommand();
-            switch (command){
-                case "N":
-                    GamePreferenceView gamePref = new GamePreferenceView();
-                    gamePref.getInput(null);
-                    break;
-                case "H": 
-                    HelpMenuView helpMenu = new HelpMenuView();
-                    helpMenu.getInput(null);
-                case "X":
-                    //return Game.EXIT;
-                    break;//will be removed with previous line executes
-                default: 
-                    displayError();
-                    continue;
+            try {
+                this.display();
+                //get command
+                command = this.getCommand();
+                switch (command){
+                    case "N":
+                        GamePreferenceView gamePref = new GamePreferenceView();
+                        gamePref.getInput(null);
+                        break;
+                    case "H": 
+                        HelpMenuView helpMenu = new HelpMenuView();
+                        helpMenu.getInput(null);
+                    case "X":
+                        return Status.EXIT;
+                        //break;//will be removed with previous line executes
+                    /*default: 
+                        displayError();
+                        continue;*/
+                }
             }
-        } while (!command.equals("X"));
+            catch (MenuException e){
+                System.out.println("\n"+e.getMessage());
+            }
+        } while (!status.equals("EXIT"));
         
         return PLAYING;
     }
