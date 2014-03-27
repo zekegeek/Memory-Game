@@ -19,9 +19,9 @@ public enum Error {
     
     ERROR105 ("This is an invalid number. Please enter a number between 1 and 8."),
     
-    ERROR106 ("This is an invalid number. Please enter a number between 1 and 7.")/*,
+    ERROR106 ("This is an invalid number. Please enter a number between 1 and 7."),
     
-    ERROR107 ("You must enter a name or enter a \"Q\" to quit. Try again."),
+    ERROR107 ("That card has already been chosen. Please try a different card.")/*,
     
     ERROR108 ("The game parameter is null."),
     

@@ -6,6 +6,8 @@
 
 package cit260.team11.memory.build;
 
+import cit260.team11.memory.enums.Error;
+import cit260.team11.memory.exceptions.GameException;
 import cit260.team11.memory.interfaces.DisplayInfo;
 import java.io.Serializable;
 import java.util.Scanner;
@@ -170,7 +172,7 @@ public class Game implements Serializable, DisplayInfo{
     }
     
     
- private Card selectCard(){
+ protected Card selectCard() throws GameException {
         
       
         int row;
@@ -184,28 +186,30 @@ public class Game implements Serializable, DisplayInfo{
         {
             System.out.println("Enter a row number for the card:");
             row = input.nextInt();
-            while (row < 0 || row > (board.getRowCount() -1)){
-                displayError();
-                System.out.println("Please enter a value between 0 and "+ (board.getRowCount() -1));
+            if (row < 0 || row > (board.getRowCount() -1)){
+                throw new GameException(Error.ERROR102.getMessage());
+                /*displayError();
+                System.out.println("Please enter a value between 0 and "+ (board.getRowCount() -1));*/
             }
             
             System.out.println("Enter a column number for the card:");
             column = input.nextInt();
-            while (column < 0 || column > (board.getColumnCount() -1)){
-                displayError();
-                System.out.println("Please enter a value between 1 and "+(board.getColumnCount() -1));
+            if (column < 0 || column > (board.getColumnCount() -1)){
+                throw new GameException(Error.ERROR102.getMessage());
+                /*displayError();
+                System.out.println("Please enter a value between 1 and "+(board.getColumnCount() -1));*/
             }
             
             card = board.getCard(row, column);
             
             if(card.isMatched())
             {
-                System.out.println("That card has already been chosen"
-                        + "\nPlease try a different card");
+                throw new GameException(Error.ERROR107.getMessage());
+                /*System.out.println("That card has already been chosen"
+                        + "\nPlease try a different card");*/
                 //break;
             }
             else validCard = true;
-        } else {
         }// end while
         return card;
                
