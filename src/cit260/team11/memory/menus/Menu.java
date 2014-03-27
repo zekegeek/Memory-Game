@@ -6,6 +6,8 @@
 
 package cit260.team11.memory.menus;
 
+import cit260.team11.memory.enums.Error;
+import cit260.team11.memory.exceptions.MenuException;
 import cit260.team11.memory.interfaces.DisplayInfo;
 import cit260.team11.memory.interfaces.EnterInfo;
 import java.util.Scanner;
@@ -64,7 +66,7 @@ public abstract class Menu implements DisplayInfo, EnterInfo{
         return false;
     }
 
-protected final String getCommand() {
+protected final String getCommand() throws MenuException {
  
         Scanner inFile = new Scanner(System.in);
         String command;
@@ -73,6 +75,9 @@ protected final String getCommand() {
             command = inFile.nextLine();
             command = command.trim().toUpperCase();
             valid = validCommand(command);
+            if (!validCommand(command)){
+                throw new MenuException(ErrorType.Error102.getMessage());
+            }
             //if (!validCommand(command)) {
                 //System.out.println("Invalid command: Please enter a valid command.");
                 //continue;}
