@@ -124,7 +124,7 @@ public class Game implements Serializable, DisplayInfo{
         setCurrentPlayer(getPlayer1());
         int currentScore = getScore1();
         
-        while (totalScore!=(board.getBoardSize()/2)){
+        do{
             System.out.println(getCurrentPlayer()+"'s Turn");
             board.display();
             try{
@@ -152,6 +152,7 @@ public class Game implements Serializable, DisplayInfo{
                     currentScore=getScore1();
             }
         }
+        while (totalScore!=(board.getBoardSize()/2));
         
         if(getScore1()>getScore2()){
             System.out.println(

@@ -9,7 +9,10 @@ package cit260.team11.memory.menus;
 import cit260.team11.memory.interfaces.EnterInfo;
 import cit260.team11.memory.enums.Status;
 import static cit260.team11.memory.enums.Status.PLAYING;
+import cit260.team11.memory.exceptions.MenuException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -39,34 +42,41 @@ public class HelpMenuView extends Menu {
     public Status getInput(Object object) {
         String command;
         Status status = Status.PLAYING;
+        Scanner inFile = new Scanner(System.in);
         do{
             this.display();//display menu
-            //user input
-        command = this.getCommand();
-        Scanner inFile = new Scanner(System.in);
-            
-            switch (command){
-                case "R":
-                    break;
-                case "M":
-                    MainMenuView mainMenu = new MainMenuView();
-                    mainMenu.getInput(null);
-                    break;
-                case "G":
-                    this.displayHelp(HelpMenuView.GAME);
-                    break;
-                case "B":
-                    this.displayHelp(HelpMenuView.BOARD);
-                    break;
-                case "P":
-                    this.displayHelp(HelpMenuView.PLAYER);
-                    break;
-                default:
-                    displayError();
-                    continue;
+            try {
+                //user input
+                command = this.getCommand();
+                switch (command){
+                    case "R":
+                        break;
+                    case "M":
+                        MainMenuView mainMenu = new MainMenuView();
+                        mainMenu.getInput(null);
+                        break;
+                    case "G":
+                        this.displayHelp(HelpMenuView.GAME);
+                        break;
+                    case "B":
+                        this.displayHelp(HelpMenuView.BOARD);
+                        break;
+                    case "P":
+                        this.displayHelp(HelpMenuView.PLAYER);
+                        break;
+                    /*default:
+                        displayError();
+                        continue;*/
+                }
+            } 
+            catch (MenuException ex) {
+                System.out.println("\n"+ex.getMessage());
+            }
+            finally{
+                inFile.close();
             }
         }
-        while(!command.equals("R")||!command.equals("M"));
+        while(!status.equals("EXIT"));
         return PLAYING;
     }
     
