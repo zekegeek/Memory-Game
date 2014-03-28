@@ -34,13 +34,16 @@ public class MainMenuView extends Menu{
         super(MainMenuView.menuItems);
     }
     
+    
+    @Override
     public Status getInput(Object object){
         //String gameStatus = Game.PLAYING;
         String command;
-        String status = "PLAYING";
+        Status status = Status.PLAYING;
+        Scanner inFile = new Scanner(System.in);
         do{
+            this.display();
             try {
-                this.display();
                 //get command
                 command = this.getCommand();
                 switch (command){
@@ -61,6 +64,9 @@ public class MainMenuView extends Menu{
             }
             catch (MenuException e){
                 System.out.println("\n"+e.getMessage());
+            }
+            finally{
+                inFile.close();
             }
         } while (!status.equals("EXIT"));
         

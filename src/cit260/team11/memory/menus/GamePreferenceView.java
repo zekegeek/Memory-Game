@@ -46,25 +46,32 @@ public class GamePreferenceView extends Menu{
         Scanner inFile = new Scanner(System.in);
         do{
             this.display();
-            command = inFile.nextLine();
-            command = command.trim().toUpperCase();
-            switch (command){
-                case "S":
-                    game= new Game();
-                    game.display();
-                    break;
-                    /* case "P":
-                    this.gamePreferenceControl.getPlayers();
-                    break;
-                    case "M":
-                    this.gamePreferenceControl.getMatches();
-                    break;
-                    case "D":
-                    this.gamePreferenceControl.getDimentions();
-                    break;
-                    default:
-                    displayError();
-                    continue;*/
+            try{ 
+                command = this.getCommand();
+                switch (command){
+                    case "S":
+                        game= new Game();
+                        game.display();
+                        break;
+                        /* case "P":
+                        this.gamePreferenceControl.getPlayers();
+                        break;
+                        case "M":
+                        this.gamePreferenceControl.getMatches();
+                        break;
+                        case "D":
+                        this.gamePreferenceControl.getDimentions();
+                        break;
+                        default:
+                        displayError();
+                        continue;*/
+                }
+            }
+            catch (MenuException e){
+                System.out.println("\n"+e.getMessage());
+            }
+            finally{
+                inFile.close();
             }
         }while (!status.equals("EXIT"));
         return Status.EXIT;
