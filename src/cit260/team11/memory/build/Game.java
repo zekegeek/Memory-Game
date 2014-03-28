@@ -123,7 +123,7 @@ public class Game implements Serializable, DisplayInfo{
         int totalScore=getScore1()+getScore2();
         setCurrentPlayer(getPlayer1());
         int currentScore = getScore1();
-        
+        Scanner inFile = new Scanner(System.in);
         do{
             System.out.println(getCurrentPlayer()+"'s Turn");
             board.display();
@@ -136,6 +136,9 @@ public class Game implements Serializable, DisplayInfo{
             }
             catch(GameException e){
                 System.out.println(e.getMessage());
+            }
+            finally{
+                inFile.close();
             }
             if (match==true){
                 currentScore++;
