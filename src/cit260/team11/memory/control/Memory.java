@@ -6,6 +6,7 @@
 
 package cit260.team11.memory.control;
 
+import cit260.team11.memory.exceptions.MenuException;
 import cit260.team11.memory.menus.MainMenuView;
 import java.awt.Point;
 import java.util.Scanner;
@@ -35,8 +36,7 @@ public class Memory {
         myGame.displayHelp();
         MainMenuView mainMenu = new MainMenuView();
         mainMenu.getInput(null);
-        
-        }
+    }
     
     //Prompt player to enter their name
     public void getName(){

@@ -127,11 +127,16 @@ public class Game implements Serializable, DisplayInfo{
         while (totalScore!=(board.getBoardSize()/2)){
             System.out.println(getCurrentPlayer()+"'s Turn");
             board.display();
-            card1 = selectCard();
-            System.out.println("this card is: " + card1.getName());
-            card2 = selectCard();
-            System.out.println("this card is: " + card2.getName());
-            match = checkMatch(card1, card2);
+            try{
+                card1 = selectCard();
+                System.out.println("this card is: " + card1.getName());
+                card2 = selectCard();
+                System.out.println("this card is: " + card2.getName());
+                match = checkMatch(card1, card2);
+            }
+            catch(GameException e){
+                System.out.println(e.getMessage());
+            }
             if (match==true){
                 currentScore++;
                 System.out.println("Congratulations, you found a match! Your current score is: " + currentScore);

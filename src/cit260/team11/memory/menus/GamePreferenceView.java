@@ -11,6 +11,7 @@ import cit260.team11.memory.enums.Status;
 import java.io.Serializable;
 import java.util.Scanner;
 import cit260.team11.memory.build.Game;
+import cit260.team11.memory.exceptions.MenuException;
 
 /**
  *
@@ -33,7 +34,7 @@ public class GamePreferenceView extends Menu{
         this.game = game;
     }*/
     
-       public GamePreferenceView() {
+    public GamePreferenceView() {
         super(GamePreferenceView.menuItems);
     }
     
@@ -52,19 +53,18 @@ public class GamePreferenceView extends Menu{
                     game= new Game();
                     game.display();
                     break;
-               /* case "P":
+                    /* case "P":
                     this.gamePreferenceControl.getPlayers();
                     break;
-                case "M":
+                    case "M":
                     this.gamePreferenceControl.getMatches();
                     break;
-                case "D":
+                    case "D":
                     this.gamePreferenceControl.getDimentions();
-                    break;*/
-                default:
+                    break;
+                    default:
                     displayError();
-                    continue;
-
+                    continue;*/
             }
         }while (!status.equals("EXIT"));
         return Status.EXIT;
