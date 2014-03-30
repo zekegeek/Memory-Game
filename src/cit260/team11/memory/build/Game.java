@@ -17,6 +17,7 @@ public class Game implements Serializable, DisplayInfo{
     Board board;
     
     private boolean match;
+    private boolean retryTurn = false;
     private Card card1;
     private Card card2;
     private int currentPlayer; 
@@ -136,10 +137,10 @@ public class Game implements Serializable, DisplayInfo{
             }
             catch(GameException e){
                 System.out.println(e.getMessage());
+                System.out.println("Please try your turn again");
+                continue;
             }
-            finally{
-                inFile.close();
-            }
+            
             if (match==true){
                 currentScore++;
                 System.out.println("Congratulations, you found a match! Your current score is: " + currentScore);
@@ -224,8 +225,11 @@ public class Game implements Serializable, DisplayInfo{
                
     }        
 
-        private boolean checkMatch(Card card1, Card card2){
-       
+        private boolean checkMatch(Card card1, Card card2)throws GameException{
+            if (card1.getRow() == card2.getRow() && card1.getCol() == card2.getCol())
+            {
+                throw new GameException(Error.ERROR108.getMessage());
+            }
         if (card1.getName().equals(card2.getName()))
         {
             card1.setMatched(true);
