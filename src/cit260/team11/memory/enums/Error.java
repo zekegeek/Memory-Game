@@ -21,7 +21,10 @@ public enum Error {
     
     ERROR106 ("This is an invalid number. Please enter a number between 1 and 7."),
     
-    ERROR107 ("That card has already been chosen. Please try a different card.")/*,
+    ERROR107 ("That card has already been chosen. Please try a different card."),
+    
+    ERROR108 ("You cannot match a card to itself.")
+    /*,
     
     ERROR108 ("The game parameter is null."),
     
