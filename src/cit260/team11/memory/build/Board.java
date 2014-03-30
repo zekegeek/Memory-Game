@@ -37,7 +37,7 @@ public class Board implements Serializable, EnterInfo, DisplayInfo {
      System.out.println("Please enter the number of rows you would like, " +
 "between 1 and 8.");
         setRowCount(getIn().nextInt());
-        while(getRowCount()<0 || getRowCount()>8){
+        while(getRowCount()<1 || getRowCount()>8){
             displayError();
             System.out.println("Please input a number 1-8");
             setRowCount(getIn().nextInt());
@@ -45,7 +45,7 @@ public class Board implements Serializable, EnterInfo, DisplayInfo {
         System.out.println("Please enter the number of columns you would like, "
               + "between 1 and 7.");
         setColumnCount(getIn().nextInt());
-     while(getColumnCount()<0 || getColumnCount()>7){
+     while(getColumnCount()<1 || getColumnCount()>7){
         displayError();
         System.out.println("Please enter a number between 1 and 7");
             setColumnCount(getIn().nextInt());
