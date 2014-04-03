@@ -7,6 +7,7 @@
 package cit260.team11.memory.control;
 
 import cit260.team11.memory.exceptions.MenuException;
+import cit260.team11.memory.frames.MainFrame;
 import cit260.team11.memory.menus.MainMenuView;
 import java.awt.Point;
 import java.util.Scanner;
@@ -28,6 +29,14 @@ public class Memory {
            + "Good Luck!!!\n\n";
     
     public static void main(String[] args) {
+        
+            java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                Memory.mainFrame = new MainFrame();
+                Memory.MainFrame().setVisible(true);
+            }
+        });
+                
 //        Board b = new Board();
 //        b.displayBoard();
     //Starts here!!    
