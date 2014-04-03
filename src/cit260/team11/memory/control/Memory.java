@@ -17,6 +17,7 @@ import java.util.Scanner;
  * @author Catherine Roebuck and Charlotte Cook
  */
 public class Memory {
+    private static MainFrame mainFrame;
 
     //Instance variables
     String name;
@@ -32,11 +33,11 @@ public class Memory {
         Memory memory = null;
         try{
             memory = new Memory();
-        
+        //ceate and display the mainFrame form
             java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 Memory.mainFrame = new MainFrame();
-                Memory.MainFrame().setVisible(true);
+                Memory.mainFrame.setVisible(true);
                 }
             });
         }
