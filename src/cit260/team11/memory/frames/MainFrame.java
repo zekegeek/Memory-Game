@@ -6,12 +6,13 @@
 
 package cit260.team11.memory.frames;
 
+import cit260.team11.memory.control.MainMenuControl;
 /**
  *
  * @author Sony Style
  */
 public class MainFrame extends javax.swing.JFrame {
-
+    private MainMenuControl mainCommands = new MainMenuControl();
     /**
      * Creates new form MainFrame
      */
@@ -71,8 +72,18 @@ public class MainFrame extends javax.swing.JFrame {
         jpMenuItems.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         newGame.setText("New Game");
+        newGame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newGameActionPerformed(evt);
+            }
+        });
 
         helpMenu.setText("Help");
+        helpMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                helpMenuActionPerformed(evt);
+            }
+        });
 
         exitGame.setText("Exit");
         exitGame.addActionListener(new java.awt.event.ActionListener() {
@@ -165,6 +176,16 @@ public class MainFrame extends javax.swing.JFrame {
     private void exitGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitGameActionPerformed
         this.dispose();
     }//GEN-LAST:event_exitGameActionPerformed
+
+    private void helpMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpMenuActionPerformed
+        //HelpFrame helpFrame = new HelpFrame();
+        //helpFrame.setVisible(true);
+    }//GEN-LAST:event_helpMenuActionPerformed
+
+    private void newGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newGameActionPerformed
+        //GamePreferencesFrame gamePreferencesFrame = new GamePreferencesFrame(this.game, this);
+        //gamePreferencesFrame.setVisible(true);
+    }//GEN-LAST:event_newGameActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton exitGame;
