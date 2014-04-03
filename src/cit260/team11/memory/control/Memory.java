@@ -29,17 +29,30 @@ public class Memory {
            + "Good Luck!!!\n\n";
     
     public static void main(String[] args) {
+        Memory memory = null;
+        try{
+            memory = new Memory();
         
             java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 Memory.mainFrame = new MainFrame();
                 Memory.MainFrame().setVisible(true);
+                }
+            });
+        }
+        catch(Throwable e){
+            System.out.println("\n"+e.getMessage());
+        }
+        finally{
+            if(Memory.mainFrame != null){
+                Memory.mainFrame.dispose();
             }
-        });
-                
+        }
+    }
+}
 //        Board b = new Board();
-//        b.displayBoard();
-    //Starts here!!    
+/*        b.displayBoard();
+    Starts here!!    
         Memory myGame = new Memory();     
         myGame.getName() ;
         myGame.displayHelp();
@@ -59,8 +72,8 @@ public class Memory {
         System.out.println("\nWelcome " + this.name + "\n");
         System.out.println(this.instructions);
     }
-}
-        
+ends here*/
+ 
     
         /*Old code, not deleting yet
         Game start = new Game();
