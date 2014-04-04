@@ -30,7 +30,7 @@ public class Game implements Serializable, DisplayInfo{
     public Game() {
     }
 
-    private Board getBoard() {
+    public Board getBoard() {
         return board;
     }
 
