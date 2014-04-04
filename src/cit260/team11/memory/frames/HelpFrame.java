@@ -147,6 +147,7 @@ public class HelpFrame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jtHelpText.setEditable(false);
         jtHelpText.setColumns(20);
         jtHelpText.setLineWrap(true);
         jtHelpText.setRows(5);
