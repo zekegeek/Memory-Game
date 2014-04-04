@@ -26,7 +26,7 @@ public enum Status {
     Status(String value){
         this.value = value;
     }
-    public String getValue(){
+    public String getStatus(){
         return value;
     }
 }

@@ -15,7 +15,7 @@ import java.util.Scanner;
  * @author Cook
  */
 public class GamePreferenceControl implements Serializable{
-    private Game game;
+    Game game;
     private int match=6;
     private int players=2;
     

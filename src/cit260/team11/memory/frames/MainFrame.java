@@ -18,6 +18,14 @@ public class MainFrame extends javax.swing.JFrame {
      */
     public MainFrame() {
         initComponents();
+        setLocationRelativeTo(null);
+    }
+    
+    public MainMenuControl getMainCommands(){
+        return mainCommands;
+    }
+    public void setMainCommands(MainMenuControl mainCommands){
+        this.mainCommands = mainCommands;
     }
 
     /**
@@ -178,13 +186,13 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_exitGameActionPerformed
 
     private void helpMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpMenuActionPerformed
-        //HelpFrame helpFrame = new HelpFrame();
-        //helpFrame.setVisible(true);
+        HelpFrame helpFrame = new HelpFrame();
+        helpFrame.setVisible(true);
     }//GEN-LAST:event_helpMenuActionPerformed
 
     private void newGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newGameActionPerformed
-        //GamePreferencesFrame gamePreferencesFrame = new GamePreferencesFrame(this.game, this);
-        //gamePreferencesFrame.setVisible(true);
+        PreferenceFrame prefFrame = new PreferenceFrame();
+        prefFrame.setVisible(true);
     }//GEN-LAST:event_newGameActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
