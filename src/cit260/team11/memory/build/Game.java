@@ -89,7 +89,7 @@ public class Game {
         this.card2 = card2;
     }
 
-    private int getCurrentPlayer() {
+    public int getCurrentPlayer() {
         return currentPlayer;
     }
 
@@ -113,7 +113,7 @@ public class Game {
         this.player2 = player2;
     }
 
-    private byte getScore1() {
+    public byte getScore1() {
         return score1;
     }
 
@@ -121,7 +121,7 @@ public class Game {
         this.score1 = score1;
     }
 
-    private byte getScore2() {
+    public byte getScore2() {
         return score2;
     }
 

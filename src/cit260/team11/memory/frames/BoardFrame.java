@@ -14,16 +14,36 @@ import cit260.team11.memory.build.*;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import java.awt.GridLayout;
+import cit260.team11.memory.build.Game;
+import cit260.team11.memory.exceptions.MenuException;
 
 public class BoardFrame extends javax.swing.JFrame {
-    Game game;
     Board board;
+    private Game game = new Game();
     
     public BoardFrame () {
-                initComponents();
+        initComponents();
         setLocationRelativeTo(null);
     }
     
+    public Game getScore(){
+        return game;
+    }
+    
+    private void displayScore1(Game score){
+        byte score1 = this.game.getScore1();
+        this.player1score.setText(""+score1);
+    }
+    
+    private void displayScore2(Game score){
+        byte score2 = this.game.getScore2();
+        this.player2score.setText(""+score2);
+    }
+    
+    private void displayPlayer(Game score){
+        int player = this.game.getCurrentPlayer();
+        this.currentTurn.setText("Player " + player);
+    }
     
     /*(JFrame frame=new JFrame();
     public BoardFrame (Game game){
@@ -122,30 +142,10 @@ public class BoardFrame extends javax.swing.JFrame {
         jLabel8.setText("Card 2 Column:");
 
         player1score.setEditable(false);
-        player1score.setText("0");
-        player1score.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                player1scoreActionPerformed(evt);
-            }
-        });
 
         player2score.setEditable(false);
-        player2score.setText("0");
 
         currentTurn.setEditable(false);
-        currentTurn.setText("Player 1");
-
-        card1column.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                card1columnActionPerformed(evt);
-            }
-        });
-
-        card2row.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                card2rowActionPerformed(evt);
-            }
-        });
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -153,6 +153,11 @@ public class BoardFrame extends javax.swing.JFrame {
         jScrollPane3.setViewportView(jTextArea1);
 
         Submit.setText("Submit");
+        Submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubmitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -298,18 +303,10 @@ public class BoardFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void card2rowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_card2rowActionPerformed
+    
+    private void SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_card2rowActionPerformed
-
-    private void card1columnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_card1columnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_card1columnActionPerformed
-
-    private void player1scoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player1scoreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_player1scoreActionPerformed
+    }//GEN-LAST:event_SubmitActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Submit;

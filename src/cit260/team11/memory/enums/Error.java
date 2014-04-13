@@ -23,13 +23,10 @@ public enum Error {
     
     ERROR107 ("That card has already been chosen. Please try a different card."),
     
-    ERROR108 ("You cannot match a card to itself.")
-    /*,
-    
-    ERROR108 ("The game parameter is null."),
-    
-    ERROR109 ("You must enter two numbers, a row and the column, "
-              + "or a \"Q\" to quit. Try again."),
+    ERROR108 ("You cannot match a card to itself."),
+        
+    ERROR109 ("NA")
+    /*
     
     ERROR201 ("No empty locations found on the board"),
     
