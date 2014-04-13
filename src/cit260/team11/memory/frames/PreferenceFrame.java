@@ -30,9 +30,7 @@ public class PreferenceFrame extends javax.swing.JFrame {
         if(this.game.getStatus() == Status.NEW_GAME){
             
         }
-    }*/
-
-    
+    }*/    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -217,6 +215,10 @@ public class PreferenceFrame extends javax.swing.JFrame {
         int columnCountInt = Integer.parseInt(boardColumns.getText());
         Game game = new Game(rowCountInt, columnCountInt);
         game.startGame();
+        
+        /*PreferenceFrame prefFrame = new PreferenceFrame();
+        prefFrame.setVisible(true);*/
+        
         /*if(rowCountInt)<1 || getRowCount()>8){
             displayError();
             System.out.println("Please input a number 1-8");

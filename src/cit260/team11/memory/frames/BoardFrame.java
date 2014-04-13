@@ -14,12 +14,12 @@ import cit260.team11.memory.build.*;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import java.awt.GridLayout;
-import cit260.team11.memory.build.Game;
-import cit260.team11.memory.exceptions.MenuException;
+//import cit260.team11.memory.build.Game;
 
 public class BoardFrame extends javax.swing.JFrame {
+    Game game;
     Board board;
-    private Game game = new Game();
+    //private Game game = new Game();
     
     public BoardFrame () {
         initComponents();

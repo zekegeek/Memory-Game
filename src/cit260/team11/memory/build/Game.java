@@ -39,6 +39,8 @@ public class Game {
     public void startGame() {
         gameBoard.setVisible(true);
         board.display(gameBoard);
+        //BoardFrame boardFrame = new BoardFrame();
+        //boardFrame.setVisible(true);
     }
     
     public void processTurn() {
