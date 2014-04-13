@@ -212,7 +212,7 @@ public class PreferenceFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbStartActionPerformed
-        int rowCountInt = boardRows. 
+        int rowCountInt = boardRows.getText().parseInt();  
         while(rowCountInt)<1 || getRowCount()>8){
             displayError();
             System.out.println("Please input a number 1-8");

@@ -16,6 +16,7 @@ import cit260.team11.memory.interfaces.EnterInfo;
 import java.io.Serializable;
 import java.util.Random;
 import java.util.Scanner;
+import cit260.team11.memory.frames.BoardFrame;
 
 public class Board implements Serializable, EnterInfo, DisplayInfo { 
     private Scanner in = new Scanner(System.in);
@@ -29,10 +30,21 @@ public class Board implements Serializable, EnterInfo, DisplayInfo {
     
  public Board() {
      getInput();
+     initializeBoard();
      createCards();
      nameCards();
     }
-    
+ public Board(int row, int column) 
+ {
+     setRowCount(row);
+     setColumnCount(column);
+     initializeBoard();
+     createCards();
+     nameCards();
+     
+ }
+ 
+ 
  public void getInput() {
      System.out.println("Please enter the number of rows you would like, " +
 "between 1 and 8.");
@@ -50,25 +62,31 @@ public class Board implements Serializable, EnterInfo, DisplayInfo {
         System.out.println("Please enter a number between 1 and 7");
             setColumnCount(getIn().nextInt());
      }
-         
-     
-     
+ }
+ 
+ public void initializeBoard()
+ {
         setBoardSize(getColumnCount() * getRowCount());
         if(getBoardSize()%2==1){
             setColumnCount(getColumnCount() + 1) ;
             setBoardSize(getColumnCount() * getRowCount());
-            System.out.println(" \n \t To ensure an even number of cards so that"
+           /* System.out.println(" \n \t To ensure an even number of cards so that"
                     + "all cards have matches, the board size has been increased"
                     + "to " + getBoardSize() + "cards"); 
+            */
         }
         else {
-            System.out.println("\n The board has " + getBoardSize() + " cards."); 
+           // System.out.println("\n The board has " + getBoardSize() + " cards."); 
         }
         
         setBoard(new Card[getRowCount()][getColumnCount()]);
         }
        
 
+ 
+ 
+ 
+ 
  public void display() {
      System.out.println("Here is your board!:");
      for(int t=0; t<getRowCount(); t++){
@@ -80,6 +98,24 @@ public class Board implements Serializable, EnterInfo, DisplayInfo {
             System.out.print("\t");
         }
         System.out.print("\n\n");
+     }
+ }
+
+ 
+  
+ public void display(BoardFrame display) {
+     String output = "";
+     
+      for(int t=0; t<getRowCount(); t++){
+        for(int i=0; i<getColumnCount(); i++) {
+            if (getBoard()[t][i].isMatched()){
+                output += (getBoard()[t][i].getName() + "-" + getBoard()[t][i].getOwner());
+            }
+            else output += t + "-" + i;
+            output += "\t";
+        }
+        output += "\n\n";
+        display.boardArea.setText(output);
      }
  }
  
@@ -251,3 +287,4 @@ public class Board implements Serializable, EnterInfo, DisplayInfo {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
+
