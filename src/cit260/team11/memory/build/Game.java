@@ -9,11 +9,11 @@ package cit260.team11.memory.build;
 import cit260.team11.memory.enums.Error;
 import cit260.team11.memory.exceptions.GameException;
 import cit260.team11.memory.interfaces.DisplayInfo;
-import java.io.Serializable;
+import cit260.team11.memory.frames.BoardFrame;
 import java.util.Scanner;
 
 
-public class Game implements Serializable, DisplayInfo{
+public class Game {
     Board board;
     
     private boolean match;
@@ -25,11 +25,19 @@ public class Game implements Serializable, DisplayInfo{
     private int player2 = 2;
     private byte score1=0;
     private byte score2=0;
+    private BoardFrame gameBoard;
     
     
-    public Game() {
+    public Game(int row, int column) {
+        gameBoard = new BoardFrame();
+        board = new Board(row, column);
+        
     }
 
+    public void startGame() {
+        gameBoard.setVisible(true);
+    }
+    
     public Board getBoard() {
         return board;
     }
@@ -104,17 +112,13 @@ public class Game implements Serializable, DisplayInfo{
     
     
    
-    @Override
+   /* @Override
     public void display() {
-        //String message = object.toString();
-        System.out.println("\t-------------------------------------------------------------------------------");
-        System.out.println("\tNew Game: ");
-        System.out.println("\t-------------------------------------------------------------------------------");
         board = new Board();
         takeTurns();   
-    }    
+    }  */  
         
-    @Override
+
     public void displayError(){
         System.out.println("Invalid Input:");
     }

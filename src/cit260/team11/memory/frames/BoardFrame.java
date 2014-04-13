@@ -19,15 +19,18 @@ public class BoardFrame extends javax.swing.JFrame {
     Game game;
     Board board;
     
-    JFrame frame=new JFrame();
+    public BoardFrame () {
+    }
+    
+    /*JFrame frame=new JFrame();
     public BoardFrame (Game game){
         this.game = game;
         this.board = game.getBoard();
         
         initComponents();
         frame.setLayout(new GridLayout(board.getColumnCount(),board.getRowCount()));
-        
-    }
+        */
+    
     //public BoardFrame() {
       //  initComponents();
     //}

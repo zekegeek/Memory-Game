@@ -212,8 +212,10 @@ public class PreferenceFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbStartActionPerformed
-        int rowCountInt = boardRows.getText().parseInt();  
-        while(rowCountInt)<1 || getRowCount()>8){
+        int rowCountInt = Integer.parseInt(boardRows.getText());  
+        int columnCountInt = Integer.parseInt(boardColumns.getText());
+        Game game = new Game();
+        /*if(rowCountInt)<1 || getRowCount()>8){
             displayError();
             System.out.println("Please input a number 1-8");
             setRowCount(getIn().nextInt());
@@ -224,7 +226,7 @@ public class PreferenceFrame extends javax.swing.JFrame {
      while(getColumnCount()<1 || getColumnCount()>7){
         displayError();
         System.out.println("Please enter a number between 1 and 7");
-            setColumnCount(getIn().nextInt());
+            setColumnCount(getIn().nextInt());*/
      }
         //Game game = this.gameCommands.create();        
     }//GEN-LAST:event_jbStartActionPerformed
