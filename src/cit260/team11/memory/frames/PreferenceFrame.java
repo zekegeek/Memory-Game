@@ -52,8 +52,8 @@ public class PreferenceFrame extends javax.swing.JFrame {
         jbMainMenu = new javax.swing.JButton();
         jlRows = new javax.swing.JLabel();
         jlCols = new javax.swing.JLabel();
-        tfCols = new javax.swing.JTextField();
-        tfCols1 = new javax.swing.JTextField();
+        boardColumns = new javax.swing.JTextField();
+        boardRows = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jtInstructions = new javax.swing.JTextArea();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -103,12 +103,12 @@ public class PreferenceFrame extends javax.swing.JFrame {
                         .addGap(16, 16, 16)
                         .addComponent(jlRows)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tfCols1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(boardRows, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpMenuItemsLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(jlCols)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tfCols, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(boardColumns, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jbStart, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
@@ -118,11 +118,11 @@ public class PreferenceFrame extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addGroup(jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlRows)
-                    .addComponent(tfCols1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(boardRows, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlCols)
-                    .addComponent(tfCols, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(boardColumns, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addComponent(jbStart)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
@@ -212,7 +212,20 @@ public class PreferenceFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbStartActionPerformed
-        //This needs to call up and create the BoardFrame
+        int rowCountInt = boardRows. 
+        while(rowCountInt)<1 || getRowCount()>8){
+            displayError();
+            System.out.println("Please input a number 1-8");
+            setRowCount(getIn().nextInt());
+        }
+        System.out.println("Please enter the number of columns you would like, "
+              + "between 1 and 7.");
+        setColumnCount(getIn().nextInt());
+     while(getColumnCount()<1 || getColumnCount()>7){
+        displayError();
+        System.out.println("Please enter a number between 1 and 7");
+            setColumnCount(getIn().nextInt());
+     }
         //Game game = this.gameCommands.create();        
     }//GEN-LAST:event_jbStartActionPerformed
 
@@ -226,6 +239,8 @@ public class PreferenceFrame extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField boardColumns;
+    private javax.swing.JTextField boardRows;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JButton jbMainMenu;
@@ -238,7 +253,5 @@ public class PreferenceFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jpTitle;
     private javax.swing.JTextArea jtHint;
     private javax.swing.JTextArea jtInstructions;
-    private javax.swing.JTextField tfCols;
-    private javax.swing.JTextField tfCols1;
     // End of variables declaration//GEN-END:variables
 }

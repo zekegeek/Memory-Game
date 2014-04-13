@@ -150,13 +150,13 @@
                                   <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                                   <Component id="jlRows" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="tfCols1" min="-2" pref="31" max="-2" attributes="0"/>
+                                  <Component id="boardRows" min="-2" pref="31" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                   <Component id="jlCols" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="tfCols" min="-2" pref="31" max="-2" attributes="0"/>
+                                  <Component id="boardColumns" min="-2" pref="31" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jbStart" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -170,12 +170,12 @@
                           <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jlRows" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="tfCols1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="boardRows" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jlCols" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="tfCols" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="boardColumns" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                           <Component id="jbStart" min="-2" max="-2" attributes="0"/>
@@ -213,9 +213,9 @@
                     <Property name="text" type="java.lang.String" value="Columns:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="tfCols">
+                <Component class="javax.swing.JTextField" name="boardColumns">
                 </Component>
-                <Component class="javax.swing.JTextField" name="tfCols1">
+                <Component class="javax.swing.JTextField" name="boardRows">
                 </Component>
               </SubComponents>
             </Container>
