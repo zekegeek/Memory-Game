@@ -36,4 +36,3 @@ public enum Help {
         return helpText;
     }
 }
-
