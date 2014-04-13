@@ -27,11 +27,13 @@ public class Game {
     private byte score2=0;
     private BoardFrame gameBoard;
     
+    public Game() {
+        board = new Board();
+    }
     
     public Game(int row, int column) {
         gameBoard = new BoardFrame();
         board = new Board(row, column);
-        
     }
 
     public void startGame() {

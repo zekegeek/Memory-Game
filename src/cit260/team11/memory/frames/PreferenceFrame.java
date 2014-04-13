@@ -23,7 +23,6 @@ public class PreferenceFrame extends javax.swing.JFrame {
      */
     public PreferenceFrame() {
         initComponents();
-        this.game = game;
         setLocationRelativeTo(null);
     }
     /*
@@ -130,6 +129,8 @@ public class PreferenceFrame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        boardColumns.getAccessibleContext().setAccessibleName("boardColumns");
+
         jtInstructions.setEditable(false);
         jtInstructions.setColumns(20);
         jtInstructions.setLineWrap(true);
@@ -214,7 +215,8 @@ public class PreferenceFrame extends javax.swing.JFrame {
     private void jbStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbStartActionPerformed
         int rowCountInt = Integer.parseInt(boardRows.getText());  
         int columnCountInt = Integer.parseInt(boardColumns.getText());
-        Game game = new Game();
+        Game game = new Game(rowCountInt, columnCountInt);
+        game.startGame();
         /*if(rowCountInt)<1 || getRowCount()>8){
             displayError();
             System.out.println("Please input a number 1-8");
@@ -227,7 +229,7 @@ public class PreferenceFrame extends javax.swing.JFrame {
         displayError();
         System.out.println("Please enter a number between 1 and 7");
             setColumnCount(getIn().nextInt());*/
-     }
+     
         //Game game = this.gameCommands.create();        
     }//GEN-LAST:event_jbStartActionPerformed
 

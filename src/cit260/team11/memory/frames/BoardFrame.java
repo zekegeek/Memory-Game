@@ -20,16 +20,18 @@ public class BoardFrame extends javax.swing.JFrame {
     Board board;
     
     public BoardFrame () {
+                initComponents();
+        setLocationRelativeTo(null);
     }
     
-    /*JFrame frame=new JFrame();
+    /*(JFrame frame=new JFrame();
     public BoardFrame (Game game){
         this.game = game;
         this.board = game.getBoard();
-        
-        initComponents();
-        frame.setLayout(new GridLayout(board.getColumnCount(),board.getRowCount()));
         */
+       // initComponents();
+        //frame.setLayout(new GridLayout(board.getColumnCount(),board.getRowCount()));
+        
     
     //public BoardFrame() {
       //  initComponents();

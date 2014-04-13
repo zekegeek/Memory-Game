@@ -51,7 +51,7 @@ public class GamePreferenceView extends Menu{
                 switch (command){
                     case "S":
                         game= new Game();
-                        game.display();
+                       // game.display();
                         break;
                         /* case "P":
                         this.gamePreferenceControl.getPlayers();
