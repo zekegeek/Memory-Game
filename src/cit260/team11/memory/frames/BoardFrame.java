@@ -24,6 +24,7 @@ public class BoardFrame extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }
     
+    
     /*(JFrame frame=new JFrame();
     public BoardFrame (Game game){
         this.game = game;
@@ -348,11 +349,11 @@ public class BoardFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Submit;
     public javax.swing.JTextArea boardArea;
-    private javax.swing.JTextField card1column;
+    public javax.swing.JTextField card1column;
     private javax.swing.JLabel card1r;
-    private javax.swing.JTextField card1row;
-    private javax.swing.JTextField card2column;
-    private javax.swing.JTextField card2row;
+    public javax.swing.JTextField card1row;
+    public javax.swing.JTextField card2column;
+    public javax.swing.JTextField card2row;
     private javax.swing.JTextField currentTurn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -369,7 +370,7 @@ public class BoardFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea messageArea;
+    public javax.swing.JTextArea messageArea;
     private javax.swing.JTextField player1score;
     private javax.swing.JTextField player2score;
     // End of variables declaration//GEN-END:variables

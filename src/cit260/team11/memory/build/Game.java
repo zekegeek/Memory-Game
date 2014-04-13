@@ -38,6 +38,23 @@ public class Game {
 
     public void startGame() {
         gameBoard.setVisible(true);
+        board.display(gameBoard);
+    }
+    
+    public void processTurn() {
+        //get row1,col1, ro2, col2, convert to ints
+        //getboard, getcards, feed row & column
+        //take error checking from selectCard
+        /*
+        use board to get actual cards back (check for valid cards, check if matched)
+        print error message to messageArea if not valid
+        if valid, display cards on board, if match then increase score and give player another turn.
+        if not match, switch player. 
+        */
+        int card1r = Integer.parseInt(gameBoard.card1row.getText());
+        int card1c = Integer.parseInt(gameBoard.card1column.getText());
+        int card2r = Integer.parseInt(gameBoard.card2row.getText());
+        int card2c = Integer.parseInt(gameBoard.card2column.getText());
     }
     
     public Board getBoard() {
